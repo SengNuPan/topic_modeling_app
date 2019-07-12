@@ -3,9 +3,11 @@
 <main class="hero-section">
   <div class="container">
     <div class="section-content">
-      <h2>Discover information about documents</h2>
-      <a href="#" class="btn-primary">Sign Up</a>
-      <a href="{{ url_for('about')}}" class="btn-secondary">Learn More</a>
+      <h2><i>Understanding your document collection!!</i></h2>
+      <a href="" clUnass="btn-primary">Home</a>
+      <a href="{{ url_for('view.html')}}" class="btn-secondary">View Text file</a>
+      <a href="{{ url_for('modeling.html')}}" clUnass="btn-third">Topic Modeling</a>
+      <a href="{{ url_for('about')}}" class="btn-fourth">Learn More</a>
     </div>
     <div class="section-device">
       <img src="static/image/natural.png">
@@ -13,4 +15,4 @@
     <div class="clearfix"></div>
     </div>
     </main>
-    {% endblock %}
+{% endblock %}

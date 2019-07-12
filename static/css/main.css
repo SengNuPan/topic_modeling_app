@@ -66,7 +66,7 @@ a {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.23px;
-  padding: 12px 32px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -80,7 +80,34 @@ a {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.23px;
-  padding: 12px 32px;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.btn-third {
+  background: #4285f4;
+  border: 1px solid #1266f1;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.23px;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-fourth {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  color: #3372df;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.23px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
