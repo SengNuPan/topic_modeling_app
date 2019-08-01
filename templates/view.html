@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<main class="hero-section">
+  <div class="container">
+    <div class="section-content">
+
+    <h1 class="h1">This is Text Visualizer</h1>
+    <p class="h3"><i>Here you can see interactive images from your text!!</i></p>
+      <form method="post" action="/viewText"  enctype="multipart/form-data" id="myForm">
+
+        <h1 fontsize="1px">Choose file...</h1>
+        <input type="file" name="photo" id="fileinput" accept=".pdf"/><br>
+
+        <button class="btn-primary"type="submit">Visualize!!</button>
+
+      </form>
+    </div>
+    <div class="section-device">
+        <img src="data:image/png;base64,{{output_image}}" alt="WordCloud Visualization will be shown here!" height="528" width="583">
+</div>
+
+    </div>
+
+
+</main>
+
+
+
+
+
+{% endblock %}

@@ -5,10 +5,13 @@
 html, body, h1 {
   margin: 0;
   padding: 0;
+  font-size: 35px;
+
+
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #AFEEEE;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -17,6 +20,14 @@ h2 {
   font-weight: 300;
 
   letter-spacing: -1.2px;
+
+}
+.section-content .h3 {
+
+  font-size: 25px;
+
+  letter-spacing: -1.2px;
+
 }
 
 a {
@@ -24,10 +35,7 @@ a {
   display: inline-block;
 }
 
-.container {
-  width: 1000px;
-  margin: 0 auto;
-}
+
 
 .pull-left {
   float: left;
@@ -44,26 +52,36 @@ a {
 .section-content {
   color: #3a3a3a;
   float: left;
-  width: 340px;
+  width: 760px;
+  margin-top: 0px;
+  padding: 10px;
 }
 
 .section-device {
-  float: right;
-  position: relative;
-  top: 65px;
+
+  margin-left:  500px;
+  margin-top: 1px;
+  padding-top: 0px;
+
+}
+.container .wordcloudresult {
+
+  margin-left:  200px;
+  margin-top: 1px;
+  padding-top: 0px;
 }
 
 .section-device image {
-  width: 600px;
+  width: 120px;
 
 }
 
 .btn-primary {
-  background: #4285f4;
-  border: 1px solid #1266f1;
-  color: #ffffff;
+  background: #20B2AA;
+  border: 1px solid #e6e6e6;
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
   padding: 10px 30px;
@@ -73,11 +91,10 @@ a {
 }
 
 .btn-secondary {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  color: #3372df;
+  background: #20B2AA;
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
   padding: 10px 30px;
@@ -86,25 +103,25 @@ a {
   text-transform: uppercase;
 }
 .btn-third {
-  background: #4285f4;
-  border: 1px solid #1266f1;
-  color: #ffffff;
+  background: #20B2AA;
+  border: 1px solid #e6e6e6;
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
   padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+
 }
 
 .btn-fourth {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  color: #3372df;
+  background: #20B2AA;
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
   padding: 10px 30px;
@@ -120,16 +137,41 @@ a {
  */
 
 header {
-  background-color: #fff;
-  padding: 25px 0;
+  background-color: #20B2AA;
+  padding: 5px 0;
+  font-size: 40px;
+  height: 60px;
+  color: #E0FFFF;
 }
 
 .title {
   float: left;
-  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  letter-spacing: 2.5px;
+  height: 10px;
+  text-transform: uppercase;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 0px;
+
+}
+
+.foot {
+  background-color: #E0FFFF;
+  float: left;
+  font-family: 'Open Sans', sans-serif;
   font-size: 17px;
   letter-spacing: 2.5px;
+  width: 100%;
   text-transform: uppercase;
+  margin-top: 80px;
+  color: #000000;
+
+
+
 }
 
 .title a, .title a:visited {
@@ -156,20 +198,27 @@ header {
 
 .main-nav li a {
   color: #3a3a3a;
+
 }
 
-
-/*
- * Hero section
- */
 
 .hero-section .section-content {
   position: relative;
-  top: 100px;
+  top: 10px;
+  font-size: 33px;
 }
 
 .hero-section .section-content h2 {
+  font-size: 28px;
+}
+.container .section-content{
   font-size: 40px;
+  width: 610px;
+  color: #20B2AA;
+}
+.container .wordcloudresult{
+  margin-top: 30px;
+
 }
 
 .hero-section .section-content .btn-primary {
@@ -303,9 +352,7 @@ header {
   padding: 5px 15px;
 }
 
-#map {
-  height: 500px;
-}
+
 
 .leaflet-popup-content h3 {
   margin: 0;
@@ -313,4 +360,154 @@ header {
 
 .leaflet-popup-content p {
   margin: 10px 0 ;
+}
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #FFFFFF;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+.myimage1{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin-left: 20%;
+  margin-top: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+.myimage2{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin-left: 20%;
+  margin-top: 0;
+  margin-right: 0;
+}
+.mypara{
+  text-align: center;
+  margin: 30%;
+  height: 20%;
+  width: 70%;
+  padding: 10px;
+  border: 20px solid black;
+  color: black;
+  font-size: 1.4em;
+  font-family: 'Open Sans', sans-serif;
+  position:absolute;
+  z-index: 999;
+}
+
+.outr-box {
+    display: flex;
+    justify-content: space-between;
+}
+.form-fields {
+    width: 49%;
+    margin: 10px 0;
+}
+.form-fields label {
+    display: block;
+    font-size: 18px;
+    text-shadow: none;
+}
+.form-fields input {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 0 14px;
+}
+.jumbotron h1, .jumbotron h3 {
+    font-size: 34px;
+    text-shadow: none;
+}
+.two-fields {display: flex;justify-content: space-between;margin-bottom: 50px;}
+.form-outr {
+    background: #d4d4d4;
+}
+.jumbotron {
+    background: transparent;
+}
+.two-fields input {
+    margin-right: 8px;
+}
+
+.two-fields input:last-child {
+    margin-right: 0;
 }
