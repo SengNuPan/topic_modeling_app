@@ -8,11 +8,10 @@ html, body, h1 {
   font-size: 35px;
 
 
-}
 
 body {
   background-color: #AFEEEE;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
 }
 div#content {
     display: none;
@@ -91,7 +90,7 @@ a {
   background: #20B2AA;
   border: 1px solid #e6e6e6;
   color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.23px;
@@ -104,7 +103,7 @@ a {
   background: #20B2AA;
   border: 1px solid #e6e6e6;
   color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
@@ -116,7 +115,7 @@ a {
 .btn-secondary {
   background: #20B2AA;
   color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
@@ -129,7 +128,7 @@ a {
   background: #20B2AA;
   border: 1px solid #e6e6e6;
   color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
@@ -143,7 +142,7 @@ a {
 .btn-fourth {
   background: #20B2AA;
   color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.23px;
@@ -169,7 +168,7 @@ header {
 
 .title {
   float: left;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 40px;
   letter-spacing: 2.5px;
   height: 10px;
@@ -184,7 +183,7 @@ header {
 .foot {
   background-color: #E0FFFF;
   float: left;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 17px;
   letter-spacing: 2.5px;
   width: 100%;
@@ -212,7 +211,7 @@ header {
 
 .main-nav li {
   display: inline-block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -269,7 +268,7 @@ header {
 .form-group label {
   color: #3a3a3a;
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -404,12 +403,12 @@ header {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Consolas';
     background: #FFFFFF;
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Consolas';
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -490,7 +489,7 @@ ul ul a {
   border: 20px solid black;
   color: black;
   font-size: 1.4em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Consolas';
   position:absolute;
   z-index: 999;
 }
