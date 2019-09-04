@@ -1,7 +1,7 @@
 
 <html>
 <head>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+
   <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="static/css/jqcloud.css" />
 
@@ -11,7 +11,7 @@
     <div class="container">
       <h1 class="title">Topic modeling</h1>
       <div class="site-header centered">
-            <nav id="multi-level-nav" class="menu multi-level-nav">
+            <nav style="float:right;margin-right:60px;">
                 <a href="{{ url_for('index')}}" class="btn-primary">Home</a>
             </nav>
         </div>
@@ -25,7 +25,7 @@
       <div class="loading_css" id="loading" style="display:none;"><img src="static/image/load_me.gif" /></div>
     <h2 class="h1">Too busy to check each <b>PDF</b> file to see what's about?</h2>
     <p class="h3"><i>Here is WordCloud visualization for your text!!</i></p>
-    <form method="post" action="/viewText"  enctype="multipart/form-data" id="myForm">
+    <form method="post" action="/viewText" id="myForm">
         <h1 fontsize="1px">Choose file...</h1>
         <input type="file" name="document" id="fileinput" accept=".pdf"/><br>
         <input type="submit"  class="btn-primary" value="Visualize" onclick="$('#loading').show();">
