@@ -1,4 +1,7 @@
 a
+aid
+ing
+chi
 about
 above
 according
@@ -56,6 +59,7 @@ cannot
 cant
 caption
 co
+de
 come
 could
 couldn
@@ -348,3 +352,11 @@ yours
 yourself
 yourselves
 yr
+from
+subject
+re
+edu
+use
+a
+above
+across

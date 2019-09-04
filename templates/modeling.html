@@ -1,46 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
   <main class="container singup-section">
-    <form action="/handleUpload" method="post" enctype="multipart/form-data">
-            <p class="h3">Choose PDF file to analyse:</p> <input type="file" name="photo" accept=".pdf"/><br>
-                <input type="submit" value="Show no: of topic(k)"/>
-
-                <div class="wordcloudresult"><span style="fontsize: 10px">
-                    <img src="data:image/png;base64,{{best_topic}}" alt="Best K!" >
-                </span></div>
+    <form action="/preprocess" method="post" enctype="multipart/form-data">
+            <p class="h3">Choose PDF file to analyse:</p> <input type="file" name="inputfile" accept=".pdf"/>
+                <input type="submit" class="btn-clean" value="Clean & show topic number" onclick="$('#loading').show();"/><br><br><br>
+                <center>
+                  <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="$('#loading').show();">Analyze PDF</a>
+<a href="{{ url_for('piechart')}}" class="btn-primary" onclick="$('#loading').show();">Overall PDF</a>
+                </center>
     </form>
+    <div id="loading" class="loading_css" style="display:none;"><img src="static/image/load_me.gif" alt="" /></div>
+
+
     <div class="section-content">
-      <p class="h3">Set Argument for topic modeling</p>
-      <form method="POST" action="/modeling">
-        {{ form.hidden_tag() }}
-        <div class="form-group">
-          {{ form.no_of_topic.label }}
-          {% if form.no_of_topic.errors %}
-            {% for error in form.no_of_topic %}
-              <p class="error-message">{{ error }}</p>
-            {% endfor %}
-          {% endif %}
-          {{ form.no_of_topic }}
-        </div>
-        <div class="form-group">
-          {{ form.no_of_words.label }}
-          {% if form.no_of_words.errors %}
-            {% for error in form.no_of_words.errors %}
-              <p class="error-message">{{ error }}</p>
-            {% endfor %}
-          {% endif %}
-          {{ form.no_of_words }}
-        </div>
-        <div class="form-group">
-          {{ form.no_of_documents.label }}
-          {% if form.no_of_documents.errors %}
-            {% for error in form.no_of_documents.errors %}
-              <p class="error-message">{{ error }}</p>
-            {% endfor %}
-          {% endif %}
-          {{ form.no_of_documents }}
-        </div>
-        {{ form.submit(class="btn-primary") }}
+      <p class="h3"></p>
+      <form method="POST" >
+
       </form>
     </div>
   </main>

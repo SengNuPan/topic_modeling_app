@@ -1,12 +1,83 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
-{% block content %}
-  <main class="about-section">
-    <div class="container">
+        <style>
+            .main {
+                border: 0px solid green;
+                float: left;
+                min-height: 180px;
+                margin-left:10px;
+                margin: 2px;
+                padding: 10px;
+                min-width: 117px;
+                position:relative;
+            }
+            .gfg {
+              margin-top:30px;
+                font-size:19px;
+                color:green;
+                margin-left:20px;
+                font-weight:bold;
+                tect-align:left;
+            }
+            .geeks {
+              font-size:16px;
+              color:green;
+              margin-left:25px;
+                text-align:left;
+            }
+            #bottom {
+                position:relative;
+                margin-top:80px;
+                bottom:0;
+                left:0;
+            }
+        </style>
+    </head>
+    <body>
 
-    <h2>About </h2>
-    <p>In Learning Flask, you'll build an app that let's you find new places around you. With this app you can find places you like, and discover new points of interest wherever you are.</p>
+        <header>
+          <div class="container">
+            <h1 class="title">Topic modeling</h1>
+            <div class="site-header centered">
+                  <nav id="multi-level-nav" class="menu multi-level-nav">
+                      <a href="{{ url_for('index')}}" class="btn-primary">Home</a>
+                  </nav>
+              </div>
+          </div>
+        </header>
+        <div class="main">
+            <div class = "gfg">Welcome from document analysis with NMF!</div>
+            <div class = "geeks">
+              <ul>
+                <li>The purpose of this project is to build an NLP web application that simplifies use of complicated NLP tools in an easy to use web interface.
+                </li>
+                <li>For analysis of large document corpus, this app provide a simple mouse click with interactive visualization to help intuitive insights into your text data.
+                </li>
+                </ul>
+              </div>
 
-    </div>
-  </main>
-{% endblock %}
+              <div class = "gfg">How is it built?</div>
+              <div class = "geeks">
+                <ul>
+                  <li>The web app is firstly deployed loacally and move to Heroku cloud platform to perform better and faster.
+
+                  </li>
+                  <li>We can be consider a general tool for quickly discovering a set of topic and their distributions.
+
+                  </li>
+                  <li>The app is capable of processing large documents due to NMF topic modeling algorithm alogn with Python Flask framework and NLTK modules!
+
+
+                  </li>
+                  </ul>
+                </div>
+
+            <div class = "gfg">System overview and flow</div>
+        </div>
+    </body>
+</html>

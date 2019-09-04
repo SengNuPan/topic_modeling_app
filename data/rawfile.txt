@@ -1,403 +1,254 @@
-TRADEMARK AND DOMAIN NAME AGREEMENT 
+Journal of Machine Learning Research 18 (2017) 1-5
 
-This agreement (the “Agreement”) is by and between ____________________________ 
+Submitted 8/15; Revised 9/16; Published 3/17
 
- 
- 
-(“Party”) and Eclipse Foundation, Inc. (“Eclipse”) and is effective as of [______] [_____],  
-201[__] (the “Effective Date”). 
- 
+Reﬁnery: An Open Source Topic Modeling Web Platform
 
-WHEREAS, Party is the owner of certain trademarks identified in Exhibit A (the 
+Daeil Kim
+Benjamin F. Swanson
+Michael C. Hughes
+Erik B. Sudderth
+Department of Computer Science, Brown University, Providence, RI 02192, USA
 
-“Trademarks”) and of certain domain names identified in Exhibit A (the “Domain Names”); 
+daeil@cs.brown.edu
+dujiaozhu@gmail.com
+mhughes@cs.brown.edu
+sudderth@cs.brown.edu
 
- 
-WHEREAS, Party is desirous of Eclipse to initiate a project or working group with a 
+Editor: Geoﬀ Holmes
 
-name based on the Trademark (the “Project Initiation”); 
+Abstract
 
- 
-WHEREAS, to accommodate the Project Initiation, Party desires to transfer all of Party’s 
+We introduce Reﬁnery, an open source platform for exploring large text document collec-
+tions with topic models. Reﬁnery is a standalone web application driven by a graphical
+interface, so it is usable by those without machine learning or programming expertise.
+Users can interactively organize articles by topic and also reﬁne this organization with
+phrase-level analysis. Under the hood, we train Bayesian nonparametric topic models that
+can adapt model complexity to the provided data with scalable learning algorithms. The
+project website http://daeilkim.github.io/refinery/ contains Python code and fur-
+ther documentation.
+
+Keywords:
 
-rights, title and interest in and to the Trademarks to Eclipse and to thereafter have certain 
-continuing usage rights of the Trademarks; 
+topic models, visualization, software
 
- 
-WHEREAS, to accommodate the Project Initiation, the Parties may mutually agree to 
-have any related Domain Names initially redirect to a URL designated by Eclipse and that the 
-Domain Names are subsequently transferred to Eclipse; 
+1. Introduction
 
- 
-In consideration of the foregoing and for other good and valuable consideration, the 
+Topic models have become a ubiquitous class of tools for the analysis of large document
+collections (Blei, 2012). However, there is still a signiﬁcant adoption barrier for individuals
+who have little to no background in coding or computer science. For example, librarians
+might be interested in understanding ways of organizing their vast archives of information
+while journalists could potentially use learned topics to extract insights from Freedom of
+Information Act (FOIA) requests. However, few have the expertise to implement necessary
+code nor an intuition for how to ﬁne tune parameters associated with these models. Be-
+yond the challenge of running statistical inference algorithms, the learned topics and word
+associations must be visualized in a way that is accurate but intuitive.
+
+To make topic modeling algorithms and results more accessible, we built an open source
+web application called Reﬁnery. Reﬁnery allows users to explore a large corpus of documents
+and further identify a small set of relevant documents for careful study. The simple drag
+and drop operation of this toolbox allows researchers to focus on the process of quickly
+understanding their data without being encumbered by the complexities of inference.
+
+2. Running Reﬁnery
+
+Reﬁnery is an in-browser web application that builds on many existing open-source projects
+related to visualization, data management, and machine learning, as shown in Fig. 1. To
+make installation simple, it has only three dependencies: the Git version-control system,
+
+c(cid:13)2017 Kim, Swanson, Hughes and Sudderth.
+License: CC-BY 4.0, see https://creativecommons.org/licenses/by/4.0/. Attribution requirements are provided
+at http://jmlr.org/papers/v18/15-441.html.
+
+Kim, Swanson, Hughes, and Sudderth
+
+(a) Input: Plain-text ﬁles, one
+per document
+
+(b) Output: Interactive visu-
+alization of learned topics
+
+(c) Technology stack
+
+Figure 1: Reﬁnery is a web-application that allows users to upload plain-text documents (a)
+and visualize the semantic themes learned by a topic-model (b). Under the hood,
+Reﬁnery uses many existing technologies (c) for browser interaction, data manage-
+ment, machine learning, and visualization. A video demo is available online: http:
+//youtu.be/7yRQ1J9Z_LI.
+
+Virtualbox (Oracle, 2013), and Vagrant (Hashimoto, 2013). At a Unix-like command line
+with these dependencies installed, running Reﬁnery requires just a few lines of code:
+
+> git clone https :// github . com / d aei lki m / r efi ner y . git
+> vagrant up # launch machine and install r e q u i r e d Python p a c k a g e s
+
+After executing these lines, Reﬁnery can be accessed from a web browser via the local
+address http://11.11.11.11:8080.
+
+3. Topic Modeling
+
+Uploading documents. Users submit documents for analysis in the form of a .zip or
+.tar.gz ﬁle, which uncompressed contains a folder of plain-text ﬁles, one for each individual
+document. Users do not need to preprocess documents or identify a vocabulary in advance.
+This is done automatically by Reﬁnery, which tokenizes every unigram from the input
+documents. The ﬁnal vocabulary excludes very rare and very common words; we discard
+terms appearing in more than 80% of all documents, or in less than 2 documents.
+
+Training a topic model. The topic modeling algorithm used for Reﬁnery comes from
+the BNPy toolbox (Hughes et al., 2015b). Speciﬁcally, we train a hierarchical Dirichlet
+process (HDP) topic model (Teh et al., 2006) using a memoized variational inference algo-
+rithm (Hughes et al., 2015a). While the underlying algorithm has many free parameters,
+we set most of these to smart defaults and only ask the user to specify an upper bound on
+the number of inferred topics. This bound provides a truncation for inﬁnite-dimensional
+HDP model.
+
+Browseable visualization. After training a model, users can explore the resulting topics
+interactively via a multi-colored ring, as shown in Fig. 2. Each segment of the ring represents
+one topic, with its size indicative of the topic’s frequency in the overall corpus. Hovering
 
-receipt and sufficiency of which is hereby acknowledged, the parties agree as follows: 
+2
+
+Refinery
 
- 
-1. 
+Figure 2: The results of an analysis on 500 New York Times articles that contained the keyword
+“obama” during the year 2013. In the ﬁgure above, the “Syria” topic has been selected
+along with a subset of 50 documents related to this topic.
+
+the cursor over a topic’s segment shows the top 50 words associated with that topic. In this
+word cloud visualization, text size is scaled according to the topic-speciﬁc word frequency.
 
-Trademark Assignment.  Party irrevocably assigns, grants and transfers to 
+Focused exploration of document subsets. Often, analysis of large collections re-
+quires identifying subsets of relevant documents and performing more detailed clustering
+of that subset. We support this by allowing the main corpus of documents to be ﬁltered
+by keyword and topic presence. Reﬁnery provides two methods for selecting relevant doc-
+uments given a trained topic model with K topics. The ﬁrst allows the user to directly
+specify a query distribution over topics which recovered documents should emulate. The
+second takes in a list of search terms, and averages the probability of topic given word for
+each term to obtain a (normalized) distribution over K topics. Given this K-dimensional
+query vector, documents are ranked based on the KL divergence between their MAP topic
+distribution and the query.
 
-Eclipse, all of Party’s right, title, and interest in and to the Trademarks, including all common 
-law rights, and any trademark registrations and applications, along with the goodwill of the 
-business symbolized by use of the Trademarks, and the right to sue third parties for and recover 
-damages from future infringement of the Trademarks, the same to be held and enjoyed by 
-Eclipse for its own use and enjoyment and the use and enjoyment of its successors, assigns or 
-other legal representatives, as fully and entirely as the same would have been held and enjoyed 
-by Party if this assignment had not been made (the “Assignment”).   
+4. Phrase Extraction and Reﬁnement
 
-To the extent that Party is seeking to perfect the ownership of the Trademarks and 
+While topic modeling enables scalable ﬁrst-pass analysis, often the underlying bag-of-words
+assumptions are too limiting. After ﬁltering a large corpus to ﬁnd only documents relevant
+to a small set of topics, Reﬁnery further allows users to explore documents by phrase
+similarity and create a summary of the corpus composed of sentences extracted from the
+input documents.
 
-Party’s ownership of the Trademarks has not been perfected by the Effective Date, Party agrees 
-to promptly assign ownership of the Trademarks to Eclipse, in accordance with the terms of this 
-Agreement, as soon as such ownership has been perfected.  Party further agrees to take all steps 
-necessary to promptly expedite any perfection of their ownership in and to the Trademarks.   
-Party hereby authorizes the Commissioner of Patents and Trademarks of the United States, and 
-any official of any other country empowered to issue trademark registrations, to record this 
-Assignment, and to issue or transfer said Trademarks to Eclipse as owner of all right, title and 
-interest therein, or otherwise as Eclipse may direct, in accordance with the terms of the 
-Assignment. 
+We use the open-source implementation of the Splitta algorithm (Gillick, 2010), which
+Gillick (2009) introduced for sentence boundary detection. First, the Splitta algorithm
+is applied for sentence boundary detection. This algorithm processes raw text and does
+not make use of the topic model output. Next, to help the user eﬃciently select a subset
+of relevant sentences from their corpus, Reﬁnery oﬀers two exploration modes. The ﬁrst,
+triggered by the button marked “Variety”, implements the KLSum algorithm for multidoc-
+ument summarization (Haghighi and Vanderwende, 2009). This algorithm ranks candidate
+sentences higher if their addition to the current set would bring the unigram distribution
+closer to that of the corpus as a whole, intuitively preferring sentences that contain globally
 
-2. 
+3
 
-Trademark Usage.  Eclipse hereby confirms that Party shall have all applicable 
-rights  to use the Trademarks in accordance with the then current version of the Guidelines for 
-Eclipse Logo and Trademarks currently available at: 
+Kim, Swanson, Hughes, and Sudderth
 
- 
+Figure 3: Reﬁnery’s phrase extraction feature. Left: User has selected some initial phrases related
+to the war in Syria from news articles. Right: Hitting the “similar” button brings up
+another set of phrases similar to the initial set.
 
-Page 1 of 5 
+relevant information that does not yet appear in the set of selected sentences. The second
+exploration method, labeled “Similar”, simply ranks candidates by cosine similarity to the
+current summary’s unigram distribution. Each sentence in the summary is linked to and
+highlighted in its original source document, facilitating the creation of a comprehensive set
+of notes with fast access to their provenance.
 
-http://www.eclipse.org/legal/logo_guidelines.php, as may be amended from time to time  (the 
-“Trademark Guidelines”).  
+5. Discussion and Related Work
 
-3. 
+Reﬁnery provides a ﬁrst step towards allowing non-technical professionals to explore large
+document collections with modern topic models. Several others groups have strived to
+simplify and democratize the use of topic models. Notably, Chaney and Blei (2012) cre-
+ated a web-based navigator to help users understand the relationship between topics and
+documents, while Chuang et al. (2012) developed a visualization package for assessing the
+goodness of topics. Topicnets (Gretarsson et al., 2012) focuses on a graph-based exploration
+and visualization of topics, while other packages such as Gephi (Bastian et al., 2009) and
+Tethne (Peirson et al., 2015) are often used to create similar visualizations of an already-
+learned set of topics. Most prior work has focused on the parametric latent Dirichlet allo-
+cation (LDA) topic model (Blei et al., 2003).
 
-Domain Names.  Upon the mutual agreement of the Parties, as of the date Eclipse 
+Reﬁnery diﬀers from these packages in the way it simpliﬁes the entire process of ana-
+lyzing text with topic models for non-expert users. Furthermore, Reﬁnery’s use of scalable
+Bayesian nonparametric topic models oﬀers the beneﬁt of automatic model selection while
+parametric models like LDA require a prior knowledge of the number of topics. Reﬁnery
+also supports phrase extraction, which allows for a more reﬁned search across documents.
+Building on the BNPy toolbox allows potential future extensions to more advanced models
+that cluster documents organized as a time-series or network. Ultimately, we plan to sup-
+port a larger variety of potential document ﬁle types including structured word processor
+ﬁles, spreadsheets, and presentations.
 
-formally approves the Project (the “Project Effective Date”), Party shall cause any related 
-Domain Names (including all sub-domains and related URLs) to redirect directly to the URLs 
-designated by Eclipse with no interstitial content.  Within ten (10) days of the Project Effective 
-Date, Party shall transfer to Eclipse Party’s entire right, title and interest to the Domain Names.   
+4
 
-4. 
+Refinery
 
-Execution and Delivery.  Upon Eclipse’s request, Party agrees that it will take 
-such actions and execute such documents (including, without limitation, the prompt execution 
-and delivery of documents in recordable form or testifying as to any material fact or thing and 
-including the transfer of any domain names through appropriate communications with domain 
-name registrars) as may be necessary to vest in and secure unto Eclipse the full right, title and 
-interest in and to the Trademarks and Domain Names and to protect and enforce the Trademarks. 
+Acknowledgments
 
-5. 
+Reﬁnery was a recipient of the Knight Prototype Fund in 2014.
 
-Representations and Warranties.  Party represents and warrants that Party has the 
-full right to convey the entire right, title and interest herein assigned, and that Party will not take 
-any action, use any trademark or domain name, or execute any instrument or grant or transfer 
-any rights, title or interests inconsistent with the rights, title and interests assigned herein. 
+References
 
-6. 
+Mathieu Bastian, Sebastien Heymann, and Mathieu Jacomy. Gephi: An open source software for
+exploring and manipulating networks. In International AAAI Conference on Weblogs and Social
+Media, 2009. URL http://www.aaai.org/ocs/index.php/ICWSM/09/paper/view/154.
 
-Warranty Disclaimer.  PARTY MAKES NO WARRANTIES, EXPRESS OR 
+David M Blei. Probabilistic topic models. Communications of the ACM, 55(4):77–84, 2012.
 
-IMPLIED, TO ANY PERSON OR ENTITY WITH RESPECT TO THE TRADEMARKS OR 
-ANY RELATED MATERIALS PROVIDED HEREUNDER, ALL OF WHICH ARE 
-PROVIDED "AS IS," AND DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING 
-WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-PARTICULAR PURPOSE, TITLE AND NONINFRINGEMENT. 
+David M. Blei, Andrew Y. Ng, and Michael I. Jordan. Latent Dirichlet allocation. J. Mach. Learn.
 
-7. 
+Res., 3:993–1022, 2003.
 
-Limitation of Liability.  IN NO EVENT WILL EITHER PARTY BE LIABLE 
+Allison June-Barlow Chaney and David M Blei. Visualizing topic models. In ICWSM, 2012.
 
-FOR ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING FROM 
-OR RELATED TO THE USE OF THE TRADEMARKS, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGES.   
+Jason Chuang, Christopher D. Manning, and Jeﬀrey Heer. Termite: Visualization techniques for
+assessing textual topic models. In Advanced Visual Interfaces, 2012. URL http://vis.stanford.
+edu/papers/termite.
 
-8. 
+Dan Gillick. Sentence boundary detection and the problem with the U.S. In Proceedings of Human
+Language Technologies: The 2009 Annual Conference of the North American Chapter of the
+Association for Computational Linguistics, Companion Volume: Short Papers, pages 241–244.
+Association for Computational Linguistics, 2009.
 
-Miscellaneous. 
+Daniel Gillick. splitta: statistical sentence boundary detection, 2010. URL https://code.google.
 
-a. 
+com/p/splitta/.
 
-b. 
+Brynjar Gretarsson, John Odonovan, Svetlin Bostandjiev, Tobias H¨ollerer, Arthur Asuncion, David
+Newman, and Padhraic Smyth. Topicnets: Visual analysis of large text corpora with topic mod-
+eling. ACM Transactions on Intelligent Systems and Technology (TIST), 3(2):23, 2012.
 
-c. 
+Aria Haghighi and Lucy Vanderwende. Exploring content models for multi-document summarization.
+In Proceedings of Human Language Technologies: The 2009 Annual Conference of the North
+American Chapter of the Association for Computational Linguistics, pages 362–370. Association
+for Computational Linguistics, 2009.
 
-Independent Contractors.  The parties hereto are independent contractors 
-and are not partners, joint venturers or otherwise affiliated, and neither 
-party has any right or authority to bind the other in any way. 
+Mitchell Hashimoto. Vagrant: Up and Running. O’Reilly Media, Inc., 2013. URL http://www.
 
-Assignment.  Eclipse may not assign this Agreement or any of its rights or 
-obligations under this Agreement without the prior written consent of 
-Party. 
+vagrantup.com.
 
-Notices.  All notices, requests, demands and other communications 
-required or permitted to be given under this Agreement shall be in writing 
-and shall be deemed to have been duly given only if personally delivered, 
-delivered by a major commercial rapid delivery courier service with 
-tracking capabilities, costs prepaid, or mailed by certified or registered 
+Michael C. Hughes, Daeil Kim, and Erik B. Sudderth. Reliable and scalable variational inference
 
- 
+for the hierarchical dirichlet process. In AISTATS, 2015a.
 
-Page 2 of 5 
+Michael C. Hughes et al. BNPy: Bayesian nonparametric machine learning for Python, 2015b. URL
 
-If to Party: 
- 
- 
+https://github.com/bnpy/bnpy/.
 
- 
- 
+Oracle. Virtualbox, 2013. URL http://www.virtualbox.org. Version 4.2.18.
 
-If to Eclipse: 
- 
- 
- 
+Erick Peirson, Aaron Baker, and Ramki Subramanian. Tethne: Bibliographic network analysis in
 
- 
- 
- 
+Python, 2015. URL https://github.com/diging/tethne.
 
- 
+Y. W. Teh, M. I. Jordan, M. J. Beal, and D. M. Blei. Hierarchical Dirichlet processes. JASA, 101
 
- 
+(476):1566–1581, 2006.
 
-d. 
-
-e. 
-
-f. 
-
-g. 
-
-h. 
-
-mail, return receipt requested, postage prepaid, to a party at the address set 
-forth below or such other address as a party last provided to the other by 
-written notice: 
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
-___________________________ 
-___________________________ 
-___________________________ 
-
-Eclipse Foundation, Inc. 
-102 Centrepointe Drive 
-Ottawa, Ontario 
-Canada, K2G 6B1 
-
- 
-
- 
-
- 
-
- 
-
-Modification and Waiver.  The failure of either party to enforce its rights 
-or to require performance by the other party of any term or condition of 
-this Agreement shall not be construed as a waiver of such rights or of its 
-right to require future performance of that term or condition.  Any 
-amendment or modification of this Agreement or any waiver of any 
-breach of any term or condition of this Agreement must be in a writing 
-signed by both parties in order to be effective and shall not be construed as 
-a waiver of any continuing or succeeding breach of such term or 
-condition, a waiver of the term or condition itself or a waiver of any right 
-under this Agreement. 
-
-Governing Law.  This Agreement shall be governed and interpreted under 
-the laws of the State of New York without regard to the conflicts of law 
-provisions thereof. 
-
-Headings.  Headings and captions are for convenience of reference only 
-and shall not be deemed to interpret, supersede or modify any provisions 
-of this Agreement. 
-
-Severability.  In the event that any provision of this Agreement shall be 
-determined by a court of competent jurisdiction to be illegal or 
-unenforceable, that provision will be limited or eliminated to the minimum 
-extent necessary so that this Agreement shall otherwise remain in full 
-force and effect and enforceable. 
-
-Entire Agreement.  Upon execution by both parties, this Agreement shall 
-constitute the entire agreement between the parties with respect to the 
-subject matter hereof and supersedes all discussions, negotiations, 
-agreements and past dealings, either oral or written, between or among the 
-parties relating to the subject matter hereof. 
-
-Page 3 of 5 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
-
-i. 
-
-Non-Exclusive Remedies.  The rights and remedies of a party set forth 
-herein are not exclusive, the exercise thereof shall not constitute an 
-election of remedies and the aggrieved party shall in all events be entitled 
-to seek whatever additional remedies may be available in law or in equity. 
-
- 
-Each party represents and warrants that it has full right, power and authority to enter into this 
-Agreement and perform all of its obligations hereunder. 
- 
-IN WITNESS WHEREOF, the parties hereto have each caused this Agreement to be executed by 
-their authorized representatives. 
- 
-COMPANY NAME:  ____________________  
- 
-Dated: _________________________ 
- 
-                                                                                       Name: __________________________ 
- 
-                                                                                         Title: __________________________ 
- 
- 
-ECLIPSE FOUNDATION, INC. 
- 
-Dated: __________________________ 
- 
-                                                                                        Name: __________________________ 
- 
-                                                                                          Title: __________________________ 
- 
-
- Signature: __________________________ 
-
- Signature: __________________________ 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Page 4 of 5 
-
-Exhibit A 
-
-1. 
-
-Trademarks: 
-
-Registered 
-
-Mark 
-
-Serial No. 
-
-Filing Date 
-
-Reg. No. 
-
-Jurisdiction 
-of 
-Registration 
-
-Reg. Date. 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
-
-Unregistered 
-
-[List all trademarks] 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-2. 
-
-Domain Names: 
-
-[List Domain Names to be transferred (if any)] 
-
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
-
-Page 5 of 5 
+5
 
 

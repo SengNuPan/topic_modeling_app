@@ -3,24 +3,19 @@
 <head>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 </head>
 <body>
   <header>
     <div class="container">
       <h1 class="title">Topic modeling</h1>
-      <!--<div class="site-header centered">
 
-            <nav id="multi-level-nav" class="menu multi-level-nav">
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-
-                </ul>
+            <nav style="float:right;margin-right:60px;">
+                <a href="{{ url_for('index')}}" class="btn-primary">Home</a>
             </nav>
-        </div>-->
 
     </div>
   </header>
-
   {% block content %}
   {% endblock %}
 

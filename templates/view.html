@@ -1,32 +1,50 @@
-{% extends "layout.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="static/css/jqcloud.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
+
+
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title">Topic modeling</h1>
+      <div class="site-header centered">
+            <nav id="multi-level-nav" class="menu multi-level-nav">
+                <a href="{{ url_for('index')}}" class="btn-primary">Home</a>
+            </nav>
+        </div>
+    </div>
+  </header>
 <main class="hero-section">
+
+
   <div class="container">
     <div class="section-content">
-
-    <h1 class="h1">This is Text Visualizer</h1>
-    <p class="h3"><i>Here you can see interactive images from your text!!</i></p>
-      <form method="post" action="/viewText"  enctype="multipart/form-data" id="myForm">
-
+      <div class="loading_css" id="loading" style="display:none;"><img src="static/image/load_me.gif" /></div>
+    <h2 class="h1">Too busy to check each <b>PDF</b> file to see what's about?</h2>
+    <p class="h3"><i>Here is WordCloud visualization for your text!!</i></p>
+    <form method="post" action="/viewText"  enctype="multipart/form-data" id="myForm">
         <h1 fontsize="1px">Choose file...</h1>
-        <input type="file" name="photo" id="fileinput" accept=".pdf"/><br>
-
-        <button class="btn-primary"type="submit">Visualize!!</button>
-
+        <input type="file" name="document" id="fileinput" accept=".pdf"/><br>
+        <input type="submit"  class="btn-primary" value="Visualize" onclick="$('#loading').show();">
       </form>
-    </div>
-    <div class="section-device">
-        <img src="data:image/png;base64,{{output_image}}" alt="WordCloud Visualization will be shown here!" height="528" width="583">
+
+
+
 </div>
+  </div>
+  <div class="float-right">
+    <img src="data:image/png;base64,{{article}}">
 
-    </div>
 
-
+  </div>
 </main>
 
 
-
-
-
-{% endblock %}
+</body>
+</html>

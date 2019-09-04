@@ -1,5 +1,11 @@
-{% extends "layout.html" %}
+{% extends "modeling.html" %}
 {% block content %}
-  {{word_per_topic| safe}}
-  {{docs_per_topic| safe}}
+
+  	<div style="float: left; ">
+  		<center><p>Top terms weight for each topic</p></center>
+    {% for article in articles %}
+    <img src="data:image/png;base64,{{article}}">
+    {%endfor%}
+    </div>
+
 {% endblock %}
