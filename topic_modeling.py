@@ -120,7 +120,7 @@ def viewText():
     plt.tight_layout(pad=0)
     plt.savefig(img, format='png')
     img.seek(0)
-    plot_url=base64.b64encode(img.getvalue()).decode()
+    plot_url=base64.b64encode(img.getvalue()).decode('utf-8')
     plt.close()
     return render_template('view.html',article=plot_url)
 
