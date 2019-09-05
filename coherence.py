@@ -1,5 +1,5 @@
 import numpy as np
-import io
+from io import BytesIO
 import re
 import pandas as pd
 from time import time
@@ -110,10 +110,10 @@ def coherence_output(trained_models,word2vecmodel,topTerms):
     best_k = k_values[xpos]
 
     plt.annotate( "k=%d" % best_k, xy=(best_k, ymax), xytext=(best_k, ymax), textcoords="offset points", fontsize=16)
-    plt.show()
-    bytes_image = io.BytesIO()
+    bytes_image = BytesIO()
     plt.savefig(bytes_image, format='png')
     bytes_image.seek(0)
+    plt.close(fig)
     #return base64.b64encode(bytes_image.getvalue()).decode()
     return bytes_image,best_k
 
@@ -177,7 +177,7 @@ def plot_top_term_weights( terms, H, topic_index, top ):
     top_terms.reverse()
     top_weights.reverse()
     fig = plt.figure(figsize=(7,4))
-    img=io.BytesIO()
+    img=BytesIO()
     # add the horizontal bar chart
     ypos = np.arange(top)
     ax = plt.barh(ypos, top_weights, align="center", color="#20B2AA",tick_label=top_terms)
@@ -187,6 +187,7 @@ def plot_top_term_weights( terms, H, topic_index, top ):
     plt.savefig(img,format='png')
     img.seek(0)
     img_b64 = base64.b64encode(img.getvalue()).decode()
+    plt.close(fig)
     return img_b64
 
 def preclean(rawtext):

@@ -1,5 +1,5 @@
 import os
-import io
+from io import BytesIO
 import os.path
 from flask import Flask, request, render_template, url_for, redirect,make_response,send_file
 import errno
@@ -67,7 +67,7 @@ def piechart():
     colors_list = ['yellow', 'lightcoral', 'skyblue', 'purple', 'pink','green','blue','cyan']
 
     repartition['Score'].plot(kind='pie',
-                            figsize=(20, 7),
+                            figsize=(20, 5),
                             autopct='%1.1f%%',
                             startangle=90,
                             shadow=True,
@@ -76,16 +76,17 @@ def piechart():
                             colors=colors_list  # add custom colors
                              # 'explode' lowest 3 continents
                             )
-    plt.title('Topic distribution over document', y=2.0)
+    #plt.title('Topic distribution over document', y=2.0)
     plt.axis('equal')
     plt.legend(labels='Topic '+repartition.index, loc='upper right')
 
-    fig = io.BytesIO()
+    fig = BytesIO()
     plt.savefig(fig,format='png')
     fig.seek(0)
     result= base64.b64encode(fig.getvalue()).decode()
-    return send_file(fig,mimetype='image/png')
-    #return render_template('overall.html',piechart=result)
+    plt.close()
+    #return send_file(fig,mimetype='image/png')
+    return render_template('overall.html',piechart=result)
 
 
 @app.route("/modeling")
@@ -111,7 +112,7 @@ def viewText():
     with open( "data/stopwords.txt", "r" ) as fin:
         for line in fin.readlines():
             custom_stop_words.append( line.strip())
-    img=io.BytesIO()
+    img=BytesIO()
     data = WordCloud(background_color="white",stopwords=custom_stop_words).generate(text)
     plt.figure()
     plt.imshow(data,interpolation="bilinear")
@@ -120,6 +121,7 @@ def viewText():
     plt.savefig(img, format='png')
     img.seek(0)
     plot_url=base64.b64encode(img.getvalue()).decode()
+    plt.close()
     return render_template('view.html',article=plot_url)
 
 @app.route("/preprocess", methods=['POST'])

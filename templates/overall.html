@@ -1,15 +1,27 @@
-{% extends "layout.html" %}
-{% block content %}
-<div>
-  <center><p>Topic distribution over document </p></center>
+<!DOCTYPE html>
+<html>
+<head>
 
-  	<div style="float: right; ">
+  <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title">Topic modeling</h1>
+
+            <nav style="float:right;margin-right:60px;">
+                <a href="{{ url_for('modeling')}}" class="btn-primary">Back</a>
+            </nav>
+
+    </div>
+  </header>
+  <center><p>Topic distribution in document </p></center>
+
+  	<div style="float:right;margin-left:20px;">
 
     <img src="data:image/png;base64,{{piechart}}">
 
     </div>
-
-</div>
-
-
-{% endblock %}
+</body>
+</html>

@@ -1,10 +1,21 @@
-{% extends "layout.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title">Topic modeling</h1>
+
+    </div>
+  </header>
 <main class="hero-section">
   <div class="container">
     <div class="section-content">
       <h2 class="h2"><i>Understanding your document collection!!</i></h2>
-      
+
       <a href="{{ url_for('view')}}" class="btn-secondary">View Text file</a>
       <a href="{{ url_for('modeling')}}" class="btn-third">Topic Modeling</a>
       <a href="{{ url_for('about')}}" class="btn-fourth">Learn More</a>
@@ -21,4 +32,5 @@
       <p>© 2019 Seng Nu Pan</p>
       </footer>
     </div>
-{% endblock %}
+</body>
+</html>

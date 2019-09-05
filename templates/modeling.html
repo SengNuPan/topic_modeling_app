@@ -5,18 +5,12 @@
             <p class="h3">Choose PDF file to analyse:</p> <input type="file" name="inputfile" accept=".pdf"/>
                 <input type="submit" class="btn-clean" value="Clean & show topic number" onclick="$('#loading').show();"/><br><br><br>
                 <center>
-                  <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="$('#loading').show();">Analyze PDF</a>
-<a href="{{ url_for('piechart')}}" class="btn-primary" onclick="$('#loading').show();">Overall PDF</a>
+                  <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="$('#loading').show();">Visualize with BarGraph</a>
+                  <a href="{{ url_for('piechart')}}" class="btn-primary" onclick="$('#loading').show();">Visualize with PieChart</a>
                 </center>
     </form>
     <div id="loading" class="loading_css" style="display:none;"><img src="static/image/load_me.gif" alt="" /></div>
-
-
     <div class="section-content">
-      <p class="h3"></p>
-      <form method="POST" >
-
-      </form>
     </div>
   </main>
 {% endblock %}

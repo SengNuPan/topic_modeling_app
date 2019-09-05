@@ -1,5 +1,21 @@
-{% extends "modeling.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title">Topic modeling</h1>
+
+            <nav style="float:right;margin-right:60px;">
+                <a href="{{ url_for('modeling')}}" class="btn-primary">Back</a>
+            </nav>
+
+    </div>
+  </header>
 
   	<div style="float: left; ">
   		<center><p>Top terms weight for each topic</p></center>
@@ -7,5 +23,5 @@
     <img src="data:image/png;base64,{{article}}">
     {%endfor%}
     </div>
-
-{% endblock %}
+</body>
+</html>
