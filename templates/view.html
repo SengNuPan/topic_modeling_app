@@ -4,6 +4,7 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/static/image/favicon_3uY_icon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="static/css/jqcloud.css" />
@@ -25,17 +26,15 @@
 
 
   <div class="container">
-    <p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
 
-		{% for message in messages %}
-		  <center><p>{{ message }}</p></center>
-		{% endfor %}
+      {% for message in messages %}
+        <center><p style="color:red;">{{ message }}</p></center>
+      {% endfor %}
 
-	  {% endif %}
-	{% endwith %}
-</p>
+      {% endif %}
+    {% endwith %}
     <div class="section-content">
     <h2 class="h1">Too busy to check each <b>PDF</b> file to see what's about?</h2>
     <p class="h3"><i>Here is WordCloud visualization for your text!!</i></p>
@@ -44,13 +43,14 @@
         <input type="file" name="file" accept=".pdf"/><br><br>
         <input type="submit"  class="btn-primary" value="Visualize" onclick="$('#loading').show();">
       </form>
-<div id="loading" class="loading_css" style="display:none;"><img src="static/image/load_me.gif"></div>
+<div id="loading" class="loading_css" style="display:none;"><img src="static/image/load_me.gif" alt=""></div>
 
 
 </div>
   </div>
-  <div class="float-right;margin-right:5px;">
-    <img src="data:image/png;base64,{{article}}">
+  <br>
+  <div id="wordcloudresult" class="float-right;margin-right:5px;">
+    <img src="data:image/png;base64,{{article}}" style="color:#20B2AA;font-size:22px;" alt="WordCloud will be shown here">
 
 
   </div>

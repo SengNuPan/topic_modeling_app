@@ -68,23 +68,23 @@ def viewText():
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
-            return redirect(request.url)
+            return render_template('view.html')
         file = request.files['file']
         if file.filename == '':
-            flash('No file selected for uploading')
-            return redirect(request.url)
+            flash('No file selected to visualize')
+            return render_template('view.html')
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             folder_path = 'input_pdf/'
             _mkdir_p(folder_path)
             file.save(os.path.join(folder_path, filename))
             lone=convert_pdf_to_txt(folder_path+ filename)
-            with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/rawfile.txt','w',encoding='utf-8') as f:
+            with open(folder_path+'rawfile.txt','w',encoding='utf-8') as f:
                 f.write(lone)
             f.close()
 
             raw_documents=[]
-            with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/rawfile.txt','r',encoding='utf-8') as f:
+            with open(folder_path+'rawfile.txt','r',encoding='utf-8') as f:
                 for line in f.readlines():
                     text=line.strip().lower()
                     raw_documents.append(text)
@@ -108,7 +108,7 @@ def viewText():
             return render_template('view.html',article=plot_url)
 
         else:
-            flash('Allowed file types are txt, pdf')
+            flash('Please enter PDF file only')
             return render_template('view.html')
 
 @app.route('/top_term_weight')
@@ -158,15 +158,27 @@ def piechart():
 def modeling():
     return render_template("modeling.html")
 
-@app.route("/preprocess", methods=['GET','POST'])
+@app.route("/preprocess", methods=['POST'])
 def preprocess():
-    if 'inputfile' in request.files:
-        rawdata = request.files['inputfile']
-        if rawdata.filename != '':
+    if 'file' in request.files:
+        if request.method == 'POST':
+            # check if the post request has the file part
+            if 'file' not in request.files:
+                flash('No file part')
+                return render_template('modeling.html')
+            file = request.files['file']
+            if file.filename == '':
+                flash('No file selected to process')
+                return render_template('modeling.html')
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                folder_path = 'input_pdf/'
+                _mkdir_p(folder_path)
+                file.save(os.path.join(folder_path, filename))
+                lone=convert_pdf_to_txt(folder_path+ filename)
+                return_url=preclean(lone)
+                return send_file(return_url,attachment_filename='plot.png',mimetype='image/png')
 
-            rawdata.save(os.path.join('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/', rawdata.filename))
-            lone=convert_pdf_to_txt('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/'+ rawdata.filename)
-            return_url=preclean(lone)
-            return send_file(return_url,attachment_filename='plot.png',mimetype='image/png')
+
 if __name__=="__main__":
     app.run(debug=True)
