@@ -190,11 +190,21 @@ def plot_top_term_weights( terms, H, topic_index, top ):
     plt.close(fig)
     return img_b64
 
+def _mkdir_p(path):
+    try:
+        os.makedirs(path)
+    except OSError as exc: # Python >2.5
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else: raise
+
 def preclean(rawtext):
-    with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/test.txt','w',encoding='utf-8') as f:
+    folder_path = 'input_pdf/'
+    _mkdir_p(folder_path)
+    with open(folder_path+'test.txt','w',encoding='utf-8') as f:
         f.write(rawtext)
     f.close()
-    with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/test.txt','r',encoding='utf-8') as f:
+    with open(folder_path+'test.txt','r',encoding='utf-8') as f:
         data=f.read().lower()
     f.close()
     sentences=split_into_sentences(data)

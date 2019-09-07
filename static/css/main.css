@@ -16,16 +16,7 @@ div#content {
     display: none;
 }
 
-div#loading {
-    top: 300 px;
-    margin: auto;
-    position: absolute;
-    z-index: 1000;
-    width: 90px;
-    height: 24px;
-    background: url(load_me.gif) no-repeat;
-    cursor: wait;
-}
+
 h2 {
 
   font-weight: 300;
