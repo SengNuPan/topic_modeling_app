@@ -34,7 +34,7 @@ from io import StringIO
 
 import gensim
 import errno
-
+nltk.data.path.append('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/nltk_data')
 
 alphabets= "([A-Za-z])"
 prefixes = "(Mr|St|Mrs|Ms|Dr|Prof|Capt|Cpt|Lt|Mt)[.]"

@@ -49,7 +49,7 @@
     {% endwith %}
     <form action="/preprocess" method="post" enctype="multipart/form-data" onsubmit="ShowLoading()">
             <p class="h3">Choose PDF file to analyse:</p> <input type="file" name="file" accept=".pdf"/>
-                <input type="submit" class="btn-clean" value="Clean & show topic number" onclick="$('#loading').show();"/><br><br><br>
+                <input type="submit" class="btn-clean" value="Clean & show topic number"/><br><br><br>
                 <center>
                   <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="ShowLoading()">Visualize with BarGraph</a>
                   <a href="{{ url_for('piechart')}}" class="btn-primary" onclick="ShowLoading()">Visualize with PieChart</a>
