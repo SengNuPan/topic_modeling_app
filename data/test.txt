@@ -1,403 +1,770 @@
-TRADEMARK AND DOMAIN NAME AGREEMENT 
+letters to nature
 
-This agreement (the “Agreement”) is by and between ____________________________ 
+larvae collected randomly in the ﬁeld (28 48.129 N, 418 40.339 E) by SCUBA. Between 5 and
+10 juveniles were recruited successfully in each of 15, 1 l polystyrene containers (n ¼ 15),
+the bottom of which was covered with an acetate sheet that served as substratum for
+sponge attachment. Containers were then randomly distributed in 3 groups, and sponges
+in each group were reared for 14 weeks in 3 different concentrations of Si(OH)4:
+0:741 6 0:133, 30:235 6 0:287 and 100:041 6 0:760 mM (mean 6 s:e:). All cultures were
+prepared using 0.22 mm polycarbonate-ﬁltered seawater, which was collected from the
+sponge habitat, handled according to standard methods to prevent Si contamination29 and
+enriched in dissolved silica, when treatments required, by using Na2SiF6. During the
+experiment, all sponges were fed by weekly addition of 2 ml of a bacterial culture
+(40–60 3 106 bacteria ml 2 1) to each container30. The seawater was replaced weekly, with
+regeneration of initial food and Si(OH)4 levels. The concentration of Si(OH)4 in cultures
+was determined on 3 replicates of 1 ml seawater samples per container by using a Bran-
+Luebbe TRAACS 2000 nutrient autoanalyser. After week 5, the accidental contamination
+of some culture containers by diatoms rendered subsequent estimates of Si uptake by
+sponges unreliable, so we discarded them for the study.
 
- 
- 
-(“Party”) and Eclipse Foundation, Inc. (“Eclipse”) and is effective as of [______] [_____],  
-201[__] (the “Effective Date”). 
- 
+For the study of the skeleton, sponges were treated according to standard methods30 and
 
-WHEREAS, Party is the owner of certain trademarks identified in Exhibit A (the 
+examined in a Hitachi S-2300 scanning electron microscope (SEM).
 
-“Trademarks”) and of certain domain names identified in Exhibit A (the “Domain Names”); 
+Received 21 April; accepted 16 August 1999.
 
- 
-WHEREAS, Party is desirous of Eclipse to initiate a project or working group with a 
+1. Hartman, W. D., Wendt, J. W. & Wiedenmayer, F. Living and fossil sponges. Notes for a short course.
 
-name based on the Trademark (the “Project Initiation”); 
+Sedimentia 8, 1–274 (1980).
 
- 
-WHEREAS, to accommodate the Project Initiation, Party desires to transfer all of Party’s 
+2. Ghiold, J. The sponges that spanned Europe. New Scient. 129, 58–62 (1991).
+3. Leinfelder, R. R. Upper Jurassic reef types and controlling factors. Proﬁl 5, 1–45 (1993).
+4. Wiedenmayer, F. Contributions to the knowledge of post-Paleozoic neritic and archibental sponges
 
-rights, title and interest in and to the Trademarks to Eclipse and to thereafter have certain 
-continuing usage rights of the Trademarks; 
+(Porifera). Schweiz. Pala¨ont. Abh. 116, 1–147 (1994).
 
- 
-WHEREAS, to accommodate the Project Initiation, the Parties may mutually agree to 
-have any related Domain Names initially redirect to a URL designated by Eclipse and that the 
-Domain Names are subsequently transferred to Eclipse; 
+5. Le´vi, C. in Fossil and Recent Sponges (eds Reitner, J. & Keupp, H.) 72–82 (Springer, New York, 1991).
+6. Moret, L. Contribution a` l’e´tude des spongiaires siliceux du Miocene de l’Algerie. Me´m. Soc. Ge´ol. Fr.
 
- 
-In consideration of the foregoing and for other good and valuable consideration, the 
+1, 1-27 (1924).
 
-receipt and sufficiency of which is hereby acknowledged, the parties agree as follows: 
+7. Vacelet, J. Indications de profondeur donne´s par les Spongiaires dans les milieux benthiques actuels.
 
- 
-1. 
+Ge´ol. Me´diterr. 15, 13–26 (1988).
 
-Trademark Assignment.  Party irrevocably assigns, grants and transfers to 
+8. Maldonado, M. & Young, C. M. Bathymetric patterns of sponge distribution on the Bahamian slope.
 
-Eclipse, all of Party’s right, title, and interest in and to the Trademarks, including all common 
-law rights, and any trademark registrations and applications, along with the goodwill of the 
-business symbolized by use of the Trademarks, and the right to sue third parties for and recover 
-damages from future infringement of the Trademarks, the same to be held and enjoyed by 
-Eclipse for its own use and enjoyment and the use and enjoyment of its successors, assigns or 
-other legal representatives, as fully and entirely as the same would have been held and enjoyed 
-by Party if this assignment had not been made (the “Assignment”).   
+Deep-Sea Res. I 43, 897–915 (1996).
 
-To the extent that Party is seeking to perfect the ownership of the Trademarks and 
+9. Lowenstam, H. A. & Weiner, S. On Biomineralization (Oxford Univ., Oxford, 1989).
+10. Maliva, R. G., Knoll, A. H. & Siever, R. Secular change in chert distribution: a reﬂection of evolving
 
-Party’s ownership of the Trademarks has not been perfected by the Effective Date, Party agrees 
-to promptly assign ownership of the Trademarks to Eclipse, in accordance with the terms of this 
-Agreement, as soon as such ownership has been perfected.  Party further agrees to take all steps 
-necessary to promptly expedite any perfection of their ownership in and to the Trademarks.   
-Party hereby authorizes the Commissioner of Patents and Trademarks of the United States, and 
-any official of any other country empowered to issue trademark registrations, to record this 
-Assignment, and to issue or transfer said Trademarks to Eclipse as owner of all right, title and 
-interest therein, or otherwise as Eclipse may direct, in accordance with the terms of the 
-Assignment. 
+biological participation in the silica cycle. Palaios 4, 519–532 (1989).
 
-2. 
+11. Nelson, D. M., Tre´guer, P., Brzezinski, M. A., Leynaert, A. & Que´guiner, B. Production and dissolution
 
-Trademark Usage.  Eclipse hereby confirms that Party shall have all applicable 
-rights  to use the Trademarks in accordance with the then current version of the Guidelines for 
-Eclipse Logo and Trademarks currently available at: 
+of biogenic silica in the ocean: revised global estimates, comparison with regional data and
+relationship to biogenic sedimentation. Glob. Biochem. Cycles 9, 359–372 (1995).
 
- 
+12. Tre´guer, P. et al. The silica balance in the world ocean: a reestimate. Science 268; 375–379 (1995).
+13. Calvert, S. E. in Silicon Geochemistry and Biogeochemistry (ed. Aston, S. R.) 143–186 (Academic,
 
-Page 1 of 5 
+London, 1983).
 
-http://www.eclipse.org/legal/logo_guidelines.php, as may be amended from time to time  (the 
-“Trademark Guidelines”).  
+14. Lisitzyn, A. P. Sedimentation in the world ocean. Soc. Econ. Palaeon. Mineral. Spec. Pub. 17, 1–218
 
-3. 
+(1972).
 
-Domain Names.  Upon the mutual agreement of the Parties, as of the date Eclipse 
+15. Weinberg, S. De´couvrir la Me´diterrane´e (E´ ditions Nathan, Paris, 1993).
+16. Maldonado, M. & Uriz, M. J. Skeletal morphology of two controversial poecilosclerid genera (Porifera,
 
-formally approves the Project (the “Project Effective Date”), Party shall cause any related 
-Domain Names (including all sub-domains and related URLs) to redirect directly to the URLs 
-designated by Eclipse with no interstitial content.  Within ten (10) days of the Project Effective 
-Date, Party shall transfer to Eclipse Party’s entire right, title and interest to the Domain Names.   
+Demospongiae): Discorhabdella and Crambe. Helgola¨nder Meeresunters. 50; 369–390 (1996).
 
-4. 
+17. Hinde, G. J. & Holmes, W. M. On the sponge remains in the Lower Tertiary strata near Oamaru, New
 
-Execution and Delivery.  Upon Eclipse’s request, Party agrees that it will take 
-such actions and execute such documents (including, without limitation, the prompt execution 
-and delivery of documents in recordable form or testifying as to any material fact or thing and 
-including the transfer of any domain names through appropriate communications with domain 
-name registrars) as may be necessary to vest in and secure unto Eclipse the full right, title and 
-interest in and to the Trademarks and Domain Names and to protect and enforce the Trademarks. 
+Zealand. J. Linn. Soc. Zool. 24, 177–262 (1892).
 
-5. 
+18. Kelly-Borges, M. & Pomponi, S. A. Phylogeny and classiﬁcation of lithisthid sponges (Porifera:
 
-Representations and Warranties.  Party represents and warrants that Party has the 
-full right to convey the entire right, title and interest herein assigned, and that Party will not take 
-any action, use any trademark or domain name, or execute any instrument or grant or transfer 
-any rights, title or interests inconsistent with the rights, title and interests assigned herein. 
+Demospongiae): a preliminary assessment using ribosomal DNA sequence comparisons. Mol. Mar.
+Biol. Biotech. 3, 87–103 (1994).
 
-6. 
+19. Mostler, H. Poriferenspiculae der alpinen Trias. Geol. Pala¨ont. Mitt. Innsbruck. 6, 1–42 (1976).
+20. Palmer, T. J. & Fu¨rsich, F. T. Ecology of sponge reefs from the Upper Bathonian of Normandy.
 
-Warranty Disclaimer.  PARTY MAKES NO WARRANTIES, EXPRESS OR 
+Palaeontology 24, 1–23 (1981).
 
-IMPLIED, TO ANY PERSON OR ENTITY WITH RESPECT TO THE TRADEMARKS OR 
-ANY RELATED MATERIALS PROVIDED HEREUNDER, ALL OF WHICH ARE 
-PROVIDED "AS IS," AND DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING 
-WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-PARTICULAR PURPOSE, TITLE AND NONINFRINGEMENT. 
+21. Burckle, L. H. in Introduction to Marine Micropaleontology (eds Haq, B. U. & Boersma, A.) 245–266
 
-7. 
+(Elsevier, Amsterdam, 1978).
 
-Limitation of Liability.  IN NO EVENT WILL EITHER PARTY BE LIABLE 
+22. Austin, B. Underwater birdwatching. Canadian Tech. Rep. Hydro. Ocean. Sci. 38, 83–90 (1984).
+23. Koltun, V. M. in The Biology of the Porifera (ed. Fry, W. G.) 285–297 (Academic, London, 1970).
+24. Tabachnick, K. R. in Sponges in Time and Space (eds van Soest, R. M. W., van Kempen, T. M. G. &
 
-FOR ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING FROM 
-OR RELATED TO THE USE OF THE TRADEMARKS, EVEN IF ADVISED OF THE 
-POSSIBILITY OF SUCH DAMAGES.   
+Braekman, J. C.) 225–232 (A. A. Balkema, Rotterdam, 1994).
 
-8. 
+25. Harper, H. E. & Knoll, A. H. Silica, diatoms and Cenozoic radiolarian evolution. Geology 3, 175–177
 
-Miscellaneous. 
+(1975).
 
-a. 
-
-b. 
-
-c. 
-
-Independent Contractors.  The parties hereto are independent contractors 
-and are not partners, joint venturers or otherwise affiliated, and neither 
-party has any right or authority to bind the other in any way. 
-
-Assignment.  Eclipse may not assign this Agreement or any of its rights or 
-obligations under this Agreement without the prior written consent of 
-Party. 
-
-Notices.  All notices, requests, demands and other communications 
-required or permitted to be given under this Agreement shall be in writing 
-and shall be deemed to have been duly given only if personally delivered, 
-delivered by a major commercial rapid delivery courier service with 
-tracking capabilities, costs prepaid, or mailed by certified or registered 
-
- 
-
-Page 2 of 5 
-
-If to Party: 
- 
- 
-
- 
- 
-
-If to Eclipse: 
- 
- 
- 
-
- 
- 
- 
-
- 
-
- 
-
-d. 
-
-e. 
-
-f. 
-
-g. 
-
-h. 
-
-mail, return receipt requested, postage prepaid, to a party at the address set 
-forth below or such other address as a party last provided to the other by 
-written notice: 
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
-
-___________________________ 
-___________________________ 
-___________________________ 
-
-Eclipse Foundation, Inc. 
-102 Centrepointe Drive 
-Ottawa, Ontario 
-Canada, K2G 6B1 
-
- 
-
- 
-
- 
-
- 
-
-Modification and Waiver.  The failure of either party to enforce its rights 
-or to require performance by the other party of any term or condition of 
-this Agreement shall not be construed as a waiver of such rights or of its 
-right to require future performance of that term or condition.  Any 
-amendment or modification of this Agreement or any waiver of any 
-breach of any term or condition of this Agreement must be in a writing 
-signed by both parties in order to be effective and shall not be construed as 
-a waiver of any continuing or succeeding breach of such term or 
-condition, a waiver of the term or condition itself or a waiver of any right 
-under this Agreement. 
-
-Governing Law.  This Agreement shall be governed and interpreted under 
-the laws of the State of New York without regard to the conflicts of law 
-provisions thereof. 
-
-Headings.  Headings and captions are for convenience of reference only 
-and shall not be deemed to interpret, supersede or modify any provisions 
-of this Agreement. 
-
-Severability.  In the event that any provision of this Agreement shall be 
-determined by a court of competent jurisdiction to be illegal or 
-unenforceable, that provision will be limited or eliminated to the minimum 
-extent necessary so that this Agreement shall otherwise remain in full 
-force and effect and enforceable. 
-
-Entire Agreement.  Upon execution by both parties, this Agreement shall 
-constitute the entire agreement between the parties with respect to the 
-subject matter hereof and supersedes all discussions, negotiations, 
-agreements and past dealings, either oral or written, between or among the 
-parties relating to the subject matter hereof. 
-
-Page 3 of 5 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
-
-i. 
-
-Non-Exclusive Remedies.  The rights and remedies of a party set forth 
-herein are not exclusive, the exercise thereof shall not constitute an 
-election of remedies and the aggrieved party shall in all events be entitled 
-to seek whatever additional remedies may be available in law or in equity. 
-
- 
-Each party represents and warrants that it has full right, power and authority to enter into this 
-Agreement and perform all of its obligations hereunder. 
- 
-IN WITNESS WHEREOF, the parties hereto have each caused this Agreement to be executed by 
-their authorized representatives. 
- 
-COMPANY NAME:  ____________________  
- 
-Dated: _________________________ 
- 
-                                                                                       Name: __________________________ 
- 
-                                                                                         Title: __________________________ 
- 
- 
-ECLIPSE FOUNDATION, INC. 
- 
-Dated: __________________________ 
- 
-                                                                                        Name: __________________________ 
- 
-                                                                                          Title: __________________________ 
- 
-
- Signature: __________________________ 
-
- Signature: __________________________ 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Page 4 of 5 
-
-Exhibit A 
-
-1. 
-
-Trademarks: 
-
-Registered 
-
-Mark 
-
-Serial No. 
-
-Filing Date 
-
-Reg. No. 
-
-Jurisdiction 
-of 
-Registration 
-
-Reg. Date. 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
-
- 
-
-Unregistered 
-
-[List all trademarks] 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-2. 
-
-Domain Names: 
-
-[List Domain Names to be transferred (if any)] 
-
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
-
-Page 5 of 5 
-
+26. Hartman, W. D. in Silicon and Siliceous Structures in Biological Systems (eds Simpson, T. L. & Volcani,
+
+B. E.) 453–493 (Springer Verlag, New York, 1981).
+
+27. Pisera, A. Upper Jurassic siliceous sponges from Swabian Alb: taxonomy and paleoecology. Palaeont.
+
+Pol. 57, 1–216 (1997).
+
+28. Reincke, T. & Barthel, D. Silica uptake kinetics of Halichondria panicea in Kiel Bight. Mar. Biol. 129,
+
+591–593 (1997).
+
+29. Grasshoff, K., Ehrardt, M. & Kremling, K. Methods of Seawater Analysis (Verlag Chemie, Weinheim,
+
+1983).
+
+30. Maldonado, M. & Uriz, M. J. An experimental approach to the ecological signiﬁcance of microhabitat-
+
+scale movement in an encrusting sponge. Mar. Ecol. Prog. Ser. 185, 239–255 (1999).
+
+Acknowledgements
+We thank S. Pla for help with nutrient analyses, technicians of the Servicio de Microscopia
+for help with SEM, and E. Ballesteros, C. M. Young, A. Pisera and R. Rycroft for comments
+on the manuscript.
+
+Correspondence and requests for materials should be addressed to M.M.
+(e-mail: maldonado@ceab.csic.es).
+
+.................................................................
+Learning the parts of objects by
+non-negative matrix factorization
+
+Daniel D. Lee* & H. Sebastian Seung*†
+
+* Bell Laboratories, Lucent Technologies, Murray Hill, New Jersey 07974, USA
+† Department of Brain and Cognitive Sciences, Massachusetts Institute of
+Technology, Cambridge, Massachusetts 02139, USA
+
+.......................................... ......................... ......................... ......................... .........................
+Is perception of the whole based on perception of its parts? There
+is psychological1 and physiological2,3 evidence for parts-based
+representations in the brain, and certain computational theories
+of object recognition rely on such representations4,5. But little is
+known about how brains or computers might learn the parts of
+objects. Here we demonstrate an algorithm for non-negative
+matrix factorization that is able to learn parts of faces and
+semantic features of text. This is in contrast to other methods,
+such as principal components analysis and vector quantization,
+that learn holistic, not parts-based, representations. Non-negative
+matrix factorization is distinguished from the other methods by
+its use of non-negativity constraints. These constraints lead to a
+parts-based representation because they allow only additive, not
+subtractive, combinations. When non-negative matrix factoriza-
+tion is implemented as a neural network, parts-based representa-
+tions emerge by virtue of two properties: the ﬁring rates of
+neurons are never negative and synaptic strengths do not
+change sign.
+
+We have applied non-negative matrix factorization (NMF),
+together with principal components analysis (PCA) and vector
+quantization (VQ), to a database of facial images. As shown in
+Fig. 1, all three methods learn to represent a face as a linear
+combination of basis images, but with qualitatively different results.
+VQ discovers a basis consisting of prototypes, each of which is a
+whole face. The basis images for PCA are ‘eigenfaces’, some of which
+resemble distorted versions of whole faces6. The NMF basis is
+radically different: its images are localized features that correspond
+better with intuitive notions of the parts of faces.
+
+How does NMF learn such a representation, so different from the
+holistic representations of PCA and VQ? To answer this question, it
+is helpful to describe the three methods in a matrix factorization
+framework. The image database is regarded as an n 3 m matrix V,
+each column of which contains n non-negative pixel values of one of
+the m facial images. Then all three methods construct approximate
+factorizations of the form V < WH, or
+< ðWHÞim ¼ ^r
+
+W iaHam
+
+V im
+
+ð1Þ
+
+a¼1
+
+The r columns of W are called basis images. Each column of H is
+called an encoding and is in one-to-one correspondence with a face
+in V. An encoding consists of the coefﬁcients by which a face is
+represented with a linear combination of basis images. The dimen-
+sions of the matrix factors W and H are n 3 r and r 3 m, respec-
+tively. The rank r of the factorization is generally chosen so that
+ðn þ mÞr , nm, and the product WH can be regarded as a com-
+pressed form of the data in V.
+
+The differences between PCA, VQ and NMF arise from different
+constraints imposed on the matrix factors W and H. In VQ, each
+column of H is constrained to be a unary vector, with one element
+equal to unity and the other elements equal to zero. In other words,
+every face (column of V) is approximated by a single basis image
+(column of W) in the factorization V < WH. Such a unary encod-
+ing for a particular face is shown next to the VQ basis in Fig. 1. This
+unary representation forces VQ to learn basis images that are
+prototypical faces.
+
+788
+
+© 1999 Macmillan Magazines Ltd
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+letters to nature
+
+PCA constrains the columns of W to be orthonormal and the
+rows of H to be orthogonal to each other. This relaxes the unary
+constraint of VQ, allowing a distributed representation in which
+each face is approximated by a linear combination of all the basis
+images, or eigenfaces6. A distributed encoding of a particular face is
+shown next to the eigenfaces in Fig. 1. Although eigenfaces have a
+statistical interpretation as the directions of largest variance, many
+of them do not have an obvious visual interpretation. This is
+because PCA allows the entries of W and H to be of arbitrary sign.
+As the eigenfaces are used in linear combinations that generally
+involve complex cancellations between positive and negative
+numbers, many individual eigenfaces lack intuitive meaning.
+
+NMF does not allow negative entries in the matrix factors W and
+H. Unlike the unary constraint of VQ, these non-negativity con-
+straints permit the combination of multiple basis images to repre-
+sent a face. But only additive combinations are allowed, because the
+non-zero elements of W and H are all positive. In contrast to PCA,
+no subtractions can occur. For these reasons, the non-negativity
+constraints are compatible with the intuitive notion of combining
+parts to form a whole, which is how NMF learns a parts-based
+representation.
+
+As can be seen from Fig. 1, the NMF basis and encodings contain
+a large fraction of vanishing coefﬁcients, so both the basis images
+and image encodings are sparse. The basis images are sparse because
+they are non-global and contain several versions of mouths, noses
+and other facial parts, where the various versions are in different
+locations or forms. The variability of a whole face is generated by
+combining these different parts. Although all parts are used by at
+
+least one face, any given face does not use all the available parts. This
+results in a sparsely distributed image encoding, in contrast to the
+unary encoding of VQ and the fully distributed PCA encoding7–9.
+We implemented NMF with the update rules for Wand H given in
+Fig. 2. Iteration of these update rules converges to a local maximum
+of the objective function
+
+F ¼ ^n
+
+^m
+
+½V imlogðWHÞim
+
+2 ðWHÞimÿ
+
+i¼1
+
+m¼1
+
+ð2Þ
+
+subject to the non-negativity constraints described above. This
+objective function can be derived by interpreting NMF as a
+method for constructing a probabilistic model of image generation.
+In this model, an image pixel Vim is generated by adding Poisson
+noise to the product (WH)im. The objective function in equation (2)
+is then related to the likelihood of generating the images in V from
+the basis W and encodings H.
+
+The exact form of the objective function is not as crucial as the
+non-negativity constraints for the success of NMF in learning parts.
+A squared error objective function can be optimized with update
+rules for W and H different from those in Fig. 2 (refs 10, 11). These
+update rules yield results similar to those shown in Fig. 1, but have
+the technical disadvantage of requiring the adjustment of a parameter
+controlling the learning rate. This parameter is generally adjusted
+through trial and error, which can be a time-consuming process if
+the matrix V is very large. Therefore, the update rules described in
+Fig. 2 may be advantageous for applications involving large data-
+bases.
+
+Figure 1 Non-negative matrix factorization (NMF) learns a parts-based representation of
+faces, whereas vector quantization (VQ) and principal components analysis (PCA) learn
+holistic representations. The three learning methods were applied to a database of
+m ¼ 2;429 facial images, each consisting of n ¼ 19 3 19 pixels, and constituting an
+n3 mmatrix V. All three ﬁnd approximate factorizations of the form V < WH, but with
+three different types of constraints on Wand H, as described more fully in the main text
+and methods. As shown in the 7 3 7 montages, each method has learned a set of
+r ¼ 49 basis images. Positive values are illustrated with black pixels and negative values
+with red pixels. A particular instance of a face, shown at top right, is approximately
+represented by a linear superposition of basis images. The coefﬁcients of the linear
+superposition are shown next to each montage, in a 7 3 7 grid, and the resulting
+superpositions are shown on the other side of the equality sign. Unlike VQ and PCA, NMF
+learns to represent faces with a set of basis images resembling parts of faces.
+
+NMF
+
+VQ
+
+PCA
+
+Original
+
+=
+
+=
+
+=
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+© 1999 Macmillan Magazines Ltd
+
+789
+
+·
+·
+·
+letters to nature
+
+It is helpful to visualize the dependencies between image pixels
+and encoding variables in the form of the network shown in Fig. 3.
+The top layer of nodes represents an encoding h1,…,hr (column of
+H), and the bottom layer an image v1,…,vn (column of V). The
+matrix element Wia quantiﬁes the amount of inﬂuence that the ath
+encoding variable ha has on the ith image pixel vi. A single encoding
+variable inﬂuences multiple image pixels, owing to the fan-out of
+connections from the encoding variable. Because of the non-
+negativity of Wia, this inﬂuence is restricted to coactivation of
+image pixels. Intuitively, a parts-based representation should be
+learnable from observations of coactivation in V, as the image pixels
+belonging to the same part of the face are coactivated when that part
+is present. NMF learns by adapting Wia to generate the appropriate
+coactivations.
+
+The preceding description of NMF has been specialized to
+images, but the algorithm is actually applicable to a wide variety
+of problem domains. More generally, NMF is a method for
+modelling the generation of directly observable visible variables V
+from hidden variables H (refs 12, 13). Each hidden variable
+coactivates a subset of visible variables, or ‘part’. Activation of a
+constellation of hidden variables combines these parts additively to
+generate a whole. Seen in this light, NMF has a very broad range of
+potential applications. We illustrate this versatility by applying
+NMF to a completely different problem, the semantic analysis of
+text documents.
+
+For this application, a corpus of documents is summarized by a
+matrix V, where Vim is the number of times the ith word in the
+vocabulary appears in the mth document14. These word counts can
+be regarded as a set of visible variables and modelled as being
+generated from an underlying set of hidden variables. Application of
+VQ, PCA or NMF involves ﬁnding the approximate factorization of
+this matrix V < WH into a feature set W and hidden variables H, in
+the same way as was done for faces.
+
+In the VQ factorization, a single hidden variable is active for each
+document. If the same hidden variable is active for a group of
+documents, they are semantically related, because they have similar
+frequencies of word occurrence. Consequently, the hidden variables
+are called semantic variables, and VQ is accordingly used for
+automatic semantic indexing of documents by topic14. Each
+column of W, or semantic feature, consists of the word frequencies
+for the corresponding semantic variable.
+
+VQ allows only one semantic variable to be active, which prevents
+more than one topic from being attributed to a document. PCA
+would seem to be a solution to this problem, as it allows activation
+of multiple semantic variables. Although PCA has been successful in
+
+certain linguistic tasks15, it generally results in semantic variables
+that are difﬁcult to interpret, for much the same reason that the PCA
+representation of faces has no obvious visual interpretation. This is
+the result of two unrealistic aspects of the model: all semantic
+variables are used to represent each document; and negative values
+for semantic variables are allowed. Intuitively, it makes more sense
+for each document to be associated with some small subset of a large
+array of topics, rather than just one topic or all the topics. Because
+the sparsely distributed representation of NMF appears ideally
+suited for this purpose, we applied NMF to the semantic analysis
+of a corpus of encyclopedia articles.
+
+Some of the semantic features (r ¼ 200, columns of W) discov-
+ered by NMF are shown in Fig. 4. In each semantic feature, the
+algorithm has grouped together semantically related words. Each
+article in the encyclopedia is represented by additively combining
+several of these features. For example, to represent the article about
+the ‘Constitution of the United States’, the semantic feature contain-
+ing ‘supreme’ and ‘court’ and the one containing ‘president’ and
+‘congress’ are coactivated.
+
+In addition to grouping semantically related words together into
+semantic features, the algorithm uses context to differentiate
+between multiple meanings of the same word. For example, the
+word ‘lead’ appears with high frequency in two semantic features
+shown in Fig. 4: it occurs with ‘metal’, ‘copper’ and ‘steel’ in one,
+whereas it appears with ‘person’, ‘rules’ and ‘law’ in the other. This
+demonstrates that NMF can deal with the polysemy of ‘lead’ by
+disambiguating two of its meanings in the corpus of documents.
+
+Although NMF is successful in learning facial parts and semantic
+topics, this success does not imply that the method can learn parts
+from any database, such as images of objects viewed from extremely
+different viewpoints, or highly articulated objects. Learning parts
+for these complex cases is likely to require fully hierarchical models
+with multiple levels of hidden variables, instead of the single level in
+NMF. Although non-negativity constraints may help such models
+to learn parts-based representations13, we do not claim that they are
+sufﬁcient in themselves. Also, NMF does not learn anything about
+the ‘syntactic’ relationships between parts. NMF assumes that the
+hidden variables are non-negative, but makes no further assumptions
+about their statistical dependencies.
+
+This is in contrast to independent components analysis (ICA),
+a variant of PCA that assumes that the hidden variables are
+statistically independent and non-gaussian16,12. Applying ICA to
+the facial images to make the encodings independent results in basis
+images that are holistic. The independence assumption of ICA is ill-
+suited for learning parts-based representations because various
+
+W
+ia
+
+W
+ia
+
+m
+
+W
+ia
+
+H
+
+m
+
+a
+
+V
+m
+i
+(
+WH
+
+)
+
+m
+i
+
+W
+ia
+W
+
+j
+
+ja
+
+H
+
+m
+a
+
+H
+
+m
+a
+
+W
+ia
+
+V
+m
+i
+(
+WH
+
+)
+
+m
+i
+
+i
+
+W
+
+v1
+
+h1
+
+. . .
+
+hr
+
+. . .
+
+Æ væ  = Wh
+
+vn
+
+Figure 2 Iterative algorithm for non-negative matrix factorization. Starting from non-
+negative initial conditions for Wand H, iteration of these update rules for non-negative V
+ﬁnds an approximate factorization V < WH by converging to a local maximum of the
+objective function given in equation (2). The ﬁdelity of the approximation enters the
+updates through the quotient Vim/(WH)im. Monotonic convergence can be proven using
+techniques similar to those used in proving the convergence of the EM algorithm22,23. The
+update rules preserve the non-negativity of Wand Hand also constrain the columns of W
+to sum to unity. This sum constraint is a convenient way of eliminating the degeneracy
+associated with the invariance of WHunder the transformation W! WL, H! L 2 1H,
+where L is a diagonal matrix.
+
+Figure 3 Probabilistic hidden variables model underlying non-negative matrix
+factorization. The model is diagrammed as a network depicting how the visible variables
+v1,…,vnin the bottom layer of nodes are generated from the hidden variables h1,…,hrin
+the top layer of nodes. According to the model, the visible variables viare generated from a
+probability distribution with mean SaWiaha. In the network diagram, the inﬂuence of ha
+on viis represented by a connection with strength Wia. In the application to facial images,
+the visible variables are the image pixels, whereas the hidden variables contain the parts-
+based encoding. For ﬁxed a, the connection strengths W1a,…,Wna constitute a speciﬁc
+basis image (right middle) which is combined with other basis images to represent a whole
+facial image (right bottom).
+
+790
+
+© 1999 Macmillan Magazines Ltd
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+(cid:229)
+‹
+(cid:229)
+‹
+(cid:229)
+‹
+parts are likely to occur together. This results in complex depen-
+dencies between the hidden variables that cannot be captured by
+algorithms that assume independence in the encodings. An alter-
+native application of ICA is to transform the PCA basis images, to
+make the images rather than the encodings as statistically indepen-
+dent as possible18. This results in a basis that is non-global; however,
+in this representation all the basis images are used in cancelling
+combinations to represent an individual face, and thus the encod-
+ings are not sparse. In contrast, the NMF representation contains
+both a basis and encoding that are naturally sparse, in that many of
+the components are exactly equal to zero. Sparseness in both the
+basis and encodings is crucial for a parts-based representation.
+
+The algorithm of Fig. 2 performs both learning and inference
+simultaneously. That is, it both learns a set of basis images and
+infers values for the hidden variables from the visible variables.
+Although the generative model of Fig. 3 is linear, the inference
+computation is nonlinear owing to the non-negativity constraints.
+The computation is similar to maximum likelihood reconstruction
+in emission tomography19, and deconvolution of blurred astro-
+nomical images20,21.
+
+According to the generative model of Fig. 3, visible variables are
+generated from hidden variables by a network containing excitatory
+connections. A neural network that infers the hidden from the
+visible variables requires the addition of inhibitory feedback con-
+nections. NMF learning is then implemented through plasticity in
+the synaptic connections. A full discussion of such a network is
+beyond the scope of this letter. Here we only point out the
+
+court
+government
+council
+culture
+supreme
+constitutional
+rights
+justice
+
+president
+served
+governor
+secretary
+senate
+congress
+presidential
+elected
+
+flowers
+leaves
+plant
+perennial
+flower
+plants
+growing
+annual
+
+disease
+behaviour
+glands
+contact
+symptoms
+skin
+pain
+infection
+
+Encyclopedia entry:
+'Constitution of the
+
+United States'
+
+president (148)
+congress (124)
+power (120)
+united (104)
+constitution (81)
+amendment (71)
+government (57)
+law (49)
+
+metal process method paper ... glass copper lead steel
+
+person example time people ... rules lead leads law
+
+Figure 4 Non-negative matrix factorization (NMF) discovers semantic features of
+m ¼ 30;991 articles from the Grolier encyclopedia. For each word in a vocabulary of size
+n ¼ 15;276, the number of occurrences was counted in each article and used to form the
+15;276 3 30;991 matrix V. Each column of Vcontained the word counts for a particular
+article, whereas each row of Vcontained the counts of a particular word in different
+articles. The matrix was approximately factorized into the form WHusing the algorithm
+described in Fig. 2. Upper left, four of the r ¼ 200 semantic features (columns of W). As
+they are very high-dimensional vectors, each semantic feature is represented by a list of
+the eight words with highest frequency in that feature. The darkness of the text indicates
+the relative frequency of each word within a feature. Right, the eight most frequent words
+and their counts in the encyclopedia entry on the ‘Constitution of the United States’. This
+word count vector was approximated by a superposition that gave high weight to the
+upper two semantic features, and none to the lower two, as shown by the four shaded
+squares in the middle indicating the activities of H. The bottom of the ﬁgure exhibits the
+two semantic features containing ‘lead’ with high frequencies. Judging from the other
+words in the features, two different meanings of ‘lead’ are differentiated by NMF.
+
+letters to nature
+
+consequence of
+the non-negativity constraints, which is that
+synapses are either excitatory or inhibitory, but do not change
+sign. Furthermore, the non-negativity of the hidden and visible
+variables corresponds to the physiological fact that the ﬁring rates of
+neurons cannot be negative. We propose that the one-sided con-
+straints on neural activity and synaptic strengths in the brain may be
+important for developing sparsely distributed, parts-based repre-
+M
+sentations for perception.
+
+Methods
+The facial images used in Fig. 1 consisted of frontal views hand-aligned in a 19 3 19 grid.
+For each image, the greyscale intensities were ﬁrst linearly scaled so that the pixel mean and
+standard deviation were equal to 0.25, and then clipped to the range [0,1]. NMF was
+performed with the iterative algorithm described in Fig. 2, starting with random initial
+conditions for W and H. The algorithm was mostly converged after less than 50 iterations;
+the results shown are after 500 iterations, which took a few hours of computation time on a
+Pentium II computer. PCA was done by diagonalizing the matrix VVT. The 49 eigenvectors
+with the largest eigenvalues are displayed. VQ was done via the k-means algorithm,
+starting from random initial conditions for W and H.
+
+In the semantic analysis application of Fig. 4, the vocabulary was deﬁned as the 15,276
+most frequent words in the database of Grolier encyclopedia articles, after removal of the
+430 most common words, such as ‘the’ and ‘and’. Because most words appear in relatively
+few articles, the word count matrix V is extremely sparse, which speeds up the algorithm.
+The results shown are after the update rules of Fig. 2 were iterated 50 times starting from
+random initial conditions for W and H.
+
+Received 24 May; accepted 6 August 1999.
+
+1. Palmer, S. E. Hierarchical structure in perceptual representation. Cogn. Psychol. 9, 441–474 (1977).
+2. Wachsmuth, E., Oram, M. W. & Perrett, D. I. Recognition of objects and their component parts:
+responses of single units in the temporal cortex of the macaque. Cereb. Cortex 4, 509–522 (1994).
+3. Logothetis, N. K. & Sheinberg, D. L. Visual object recognition. Annu. Rev. Neurosci. 19, 577–621
+
+(1996).
+
+4. Biederman, I. Recognition-by-components: a theory of human image understanding. Psychol. Rev. 94,
+
+115–147 (1987).
+
+5. Ullman, S. High-Level Vision: Object Recognition and Visual Cognition (MIT Press, Cambridge, MA,
+
+1996).
+
+6. Turk, M. & Pentland, A. Eigenfaces for recognition. J. Cogn. Neurosci. 3, 71–86 (1991).
+7. Field, D. J. What is the goal of sensory coding? Neural Comput. 6, 559–601 (1994).
+8. Foldiak, P. & Young, M. Sparse coding in the primate cortex. The Handbook of Brain Theory and
+
+Neural Networks 895–898 (MIT Press, Cambridge, MA, 1995).
+
+9. Olshausen, B. A. & Field, D. J. Emergence of simple-cell receptive ﬁeld properties by learning a sparse
+
+code for natural images. Nature 381, 607–609 (1996).
+
+10. Lee, D. D. & Seung, H. S. Unsupervised learning by convex and conic coding. Adv. Neural Info. Proc.
+
+Syst. 9, 515–521 (1997).
+
+11. Paatero, P. Least squares formulation of robust non-negative factor analysis. Chemometr. Intell. Lab.
+
+37, 23–35 (1997).
+
+12. Nakayama, K. & Shimojo, S. Experiencing and perceiving visual surfaces. Science 257, 1357–1363
+
+(1992).
+
+13. Hinton, G. E., Dayan, P., Frey, B. J. & Neal, R. M. The ‘‘wake-sleep’’ algorithm for unsupervised neural
+
+networks. Science 268, 1158–1161 (1995).
+
+14. Salton, G. & McGill, M. J. Introduction to Modern Information Retrieval (McGraw-Hill, New York,
+
+1983).
+
+15. Landauer, T. K. & Dumais, S. T. The latent semantic analysis theory of knowledge. Psychol. Rev. 104,
+
+211–240 (1997).
+
+16. Jutten, C. & Herault, J. Blind separation of sources, part I: An adaptive algorithm based on
+
+neuromimetic architecture. Signal Proc. 24, 1–10 (1991).
+
+17. Bell, A. J. & Sejnowski, T. J. An information maximization approach to blind separation and blind
+
+deconvolution. Neural Comput. 7, 1129–1159 (1995).
+
+18. Bartlett, M. S., Lades, H. M. & Sejnowski, T. J. Independent component representations for face
+
+recognition. Proc. SPIE 3299, 528–539 (1998).
+
+19. Shepp, L. A. & Vardi, Y. Maximum likelihood reconstruction for emission tomography. IEEE Trans.
+
+Med. Imaging. 2, 113–122 (1982).
+
+20. Richardson, W. H. Bayesian-based iterative method of image restoration. J. Opt. Soc. Am. 62, 55–59
+
+(1972).
+
+21. Lucy, L. B. An iterative technique for the rectiﬁcation of observed distributions. Astron. J. 74, 745–754
+
+(1974).
+
+22. Dempster, A. P., Laired, N. M. & Rubin, D. B. Maximum likelihood from incomplete data via the EM
+
+algorithm. J. Royal Stat. Soc. 39, 1–38 (1977).
+
+23. Saul, L. & Pereira, F. Proceedings of the Second Conference on Empirical Methods n Natural Language
+
+Processing (eds Cardie, C. & Weischedel, R.) 81–89 (Morgan Kaufmann, San Francisco, 1997).
+
+Acknowledgements
+We acknowledge the support of Bell Laboratories and MIT. C. Papageorgiou and T. Poggio
+provided us with the database of faces, and R. Sproat with the Grolier encyclopedia corpus.
+We thank L. Saul for convincing us of the advantages of EM-type algorithms. We have
+beneﬁted from discussions with B. Anderson, K. Clarkson, R. Freund, L. Kaufman,
+E. Rietman, S. Roweis, N. Rubin, J. Tenenbaum, N. Tishby, M. Tsodyks, T. Tyson and
+M. Wright.
+
+Correspondence and requests for materials should be addressed to H.S.S.
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+© 1999 Macmillan Magazines Ltd
+
+791
+
+·
+»
 

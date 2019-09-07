@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html>
+<html lang="en">
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
@@ -25,12 +25,23 @@
 
 
   <div class="container">
+    <p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+
+		{% for message in messages %}
+		  <center><p>{{ message }}</p></center>
+		{% endfor %}
+
+	  {% endif %}
+	{% endwith %}
+</p>
     <div class="section-content">
     <h2 class="h1">Too busy to check each <b>PDF</b> file to see what's about?</h2>
     <p class="h3"><i>Here is WordCloud visualization for your text!!</i></p>
-    <form method="post" action="/viewText"  enctype="multipart/form-data" id="myForm">
-        <h1 fontsize="1px">Choose file...</h1>
-        <input type="file" name="document" id="fileinput" accept=".pdf"/><br>
+    <form method="post" action="/viewText" enctype="multipart/form-data" id="myForm">
+        <h1 fontsize="1px">Choose <b>pdf</b> file only...</h1><br>
+        <input type="file" name="file" accept=".pdf"/><br><br>
         <input type="submit"  class="btn-primary" value="Visualize" onclick="$('#loading').show();">
       </form>
 <div id="loading" class="loading_css" style="display:none;"><img src="static/image/load_me.gif"></div>

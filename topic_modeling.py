@@ -1,14 +1,15 @@
 import os
+import errno
 from io import BytesIO
 import os.path
-from flask import Flask, request, render_template, url_for, redirect,make_response,send_file
+from flask import Flask,flash,request, redirect, url_for, render_template, send_from_directory,redirect,make_response,send_file
+from werkzeug.utils import secure_filename
 import errno
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import decomposition
 import joblib
 from gensim.models import Word2Vec
 from coherence import convert_pdf_to_txt,split_into_sentences,preclean,topic_modeling,plot_top_term_weights
-from set_parameters import SetParameters
 from sklearn.decomposition import NMF
 import collections
 import numpy as np
@@ -30,9 +31,24 @@ acronyms = "([A-Z][.][A-Z][.](?:[A-Z][.])?)"
 websites = "[.](com|net|org|io|gov|me|edu)"
 digits = "([0-9])"
 
-
+UPLOAD_FOLDER = 'F:/uploads/'
+#TEST_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/test/'
+ALLOWED_EXTENSIONS = set(['txt', 'pdf'])
 app = Flask(__name__)
-app.secret_key = "development-key"
+app.secret_key = "secret key"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+def allowed_file(filename):
+   return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def _mkdir_p(path):
+    try:
+        os.makedirs(path)
+    except OSError as exc: # Python >2.5
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else: raise
 
 @app.route("/")
 def index():
@@ -45,6 +61,55 @@ def about():
 @app.route("/view")
 def view():
     return render_template("view.html")
+
+@app.route('/viewText', methods=['POST'])
+def viewText():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No file selected for uploading')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            folder_path = 'input_pdf/'
+            _mkdir_p(folder_path)
+            file.save(os.path.join(folder_path, filename))
+            lone=convert_pdf_to_txt(folder_path+ filename)
+            with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/rawfile.txt','w',encoding='utf-8') as f:
+                f.write(lone)
+            f.close()
+
+            raw_documents=[]
+            with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/rawfile.txt','r',encoding='utf-8') as f:
+                for line in f.readlines():
+                    text=line.strip().lower()
+                    raw_documents.append(text)
+            text=' '.join(raw_documents)
+
+            custom_stop_words = []
+            with open( "data/stopwords.txt", "r" ) as fin:
+                for line in fin.readlines():
+                    custom_stop_words.append( line.strip() )
+            img=BytesIO()
+            data = WordCloud(background_color="white",stopwords=custom_stop_words).generate(text)
+            plt.figure()
+            plt.imshow(data,interpolation="bilinear")
+            plt.axis('off')
+            plt.tight_layout(pad=0)
+            plt.savefig(img, format='png')
+            img.seek(0)
+            plot_url=base64.b64encode(img.getvalue()).decode()
+            plt.close()
+            #flash('File successfully uploaded')
+            return render_template('view.html',article=plot_url)
+
+        else:
+            flash('Allowed file types are txt, pdf')
+            return render_template('view.html')
 
 @app.route('/top_term_weight')
 def top_term_weight():
@@ -93,38 +158,7 @@ def piechart():
 def modeling():
     return render_template("modeling.html")
 
-@app.route("/viewText", methods=['POST'])
-def viewText():
-    if 'document' in request.files:
-        input_text = request.files['document']
-        if input_text.filename != '':
-            input_text.save(os.path.join('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/', input_text.filename))
-            lone=convert_pdf_to_txt('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/'+ input_text.filename)
-            with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/rawfile.txt','w',encoding='utf-8') as f:
-                f.write(lone)
-            f.close()
-            with open('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/data/rawfile.txt',encoding='utf-8') as f:
-                text=f.read().lower()
-            f.close()
-            sentences=split_into_sentences(text)
-            text=' '.join(sentences)
-    custom_stop_words = []
-    with open( "data/stopwords.txt", "r" ) as fin:
-        for line in fin.readlines():
-            custom_stop_words.append( line.strip())
-    img=BytesIO()
-    data = WordCloud(background_color="white",stopwords=custom_stop_words).generate(text)
-    plt.figure()
-    plt.imshow(data,interpolation="bilinear")
-    plt.axis('off')
-    plt.tight_layout(pad=0)
-    plt.savefig(img, format='png')
-    img.seek(0)
-    plot_url=base64.b64encode(img.getvalue()).decode('utf-8')
-    plt.close()
-    return render_template('view.html',article=plot_url)
-
-@app.route("/preprocess", methods=['POST'])
+@app.route("/preprocess", methods=['GET','POST'])
 def preprocess():
     if 'inputfile' in request.files:
         rawdata = request.files['inputfile']

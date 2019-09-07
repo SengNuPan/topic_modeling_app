@@ -1,254 +1,770 @@
-Journal of Machine Learning Research 18 (2017) 1-5
+letters to nature
 
-Submitted 8/15; Revised 9/16; Published 3/17
+larvae collected randomly in the ﬁeld (28 48.129 N, 418 40.339 E) by SCUBA. Between 5 and
+10 juveniles were recruited successfully in each of 15, 1 l polystyrene containers (n ¼ 15),
+the bottom of which was covered with an acetate sheet that served as substratum for
+sponge attachment. Containers were then randomly distributed in 3 groups, and sponges
+in each group were reared for 14 weeks in 3 different concentrations of Si(OH)4:
+0:741 6 0:133, 30:235 6 0:287 and 100:041 6 0:760 mM (mean 6 s:e:). All cultures were
+prepared using 0.22 mm polycarbonate-ﬁltered seawater, which was collected from the
+sponge habitat, handled according to standard methods to prevent Si contamination29 and
+enriched in dissolved silica, when treatments required, by using Na2SiF6. During the
+experiment, all sponges were fed by weekly addition of 2 ml of a bacterial culture
+(40–60 3 106 bacteria ml 2 1) to each container30. The seawater was replaced weekly, with
+regeneration of initial food and Si(OH)4 levels. The concentration of Si(OH)4 in cultures
+was determined on 3 replicates of 1 ml seawater samples per container by using a Bran-
+Luebbe TRAACS 2000 nutrient autoanalyser. After week 5, the accidental contamination
+of some culture containers by diatoms rendered subsequent estimates of Si uptake by
+sponges unreliable, so we discarded them for the study.
 
-Reﬁnery: An Open Source Topic Modeling Web Platform
+For the study of the skeleton, sponges were treated according to standard methods30 and
 
-Daeil Kim
-Benjamin F. Swanson
-Michael C. Hughes
-Erik B. Sudderth
-Department of Computer Science, Brown University, Providence, RI 02192, USA
+examined in a Hitachi S-2300 scanning electron microscope (SEM).
 
-daeil@cs.brown.edu
-dujiaozhu@gmail.com
-mhughes@cs.brown.edu
-sudderth@cs.brown.edu
+Received 21 April; accepted 16 August 1999.
 
-Editor: Geoﬀ Holmes
+1. Hartman, W. D., Wendt, J. W. & Wiedenmayer, F. Living and fossil sponges. Notes for a short course.
 
-Abstract
+Sedimentia 8, 1–274 (1980).
 
-We introduce Reﬁnery, an open source platform for exploring large text document collec-
-tions with topic models. Reﬁnery is a standalone web application driven by a graphical
-interface, so it is usable by those without machine learning or programming expertise.
-Users can interactively organize articles by topic and also reﬁne this organization with
-phrase-level analysis. Under the hood, we train Bayesian nonparametric topic models that
-can adapt model complexity to the provided data with scalable learning algorithms. The
-project website http://daeilkim.github.io/refinery/ contains Python code and fur-
-ther documentation.
-
-Keywords:
+2. Ghiold, J. The sponges that spanned Europe. New Scient. 129, 58–62 (1991).
+3. Leinfelder, R. R. Upper Jurassic reef types and controlling factors. Proﬁl 5, 1–45 (1993).
+4. Wiedenmayer, F. Contributions to the knowledge of post-Paleozoic neritic and archibental sponges
 
-topic models, visualization, software
+(Porifera). Schweiz. Pala¨ont. Abh. 116, 1–147 (1994).
 
-1. Introduction
+5. Le´vi, C. in Fossil and Recent Sponges (eds Reitner, J. & Keupp, H.) 72–82 (Springer, New York, 1991).
+6. Moret, L. Contribution a` l’e´tude des spongiaires siliceux du Miocene de l’Algerie. Me´m. Soc. Ge´ol. Fr.
 
-Topic models have become a ubiquitous class of tools for the analysis of large document
-collections (Blei, 2012). However, there is still a signiﬁcant adoption barrier for individuals
-who have little to no background in coding or computer science. For example, librarians
-might be interested in understanding ways of organizing their vast archives of information
-while journalists could potentially use learned topics to extract insights from Freedom of
-Information Act (FOIA) requests. However, few have the expertise to implement necessary
-code nor an intuition for how to ﬁne tune parameters associated with these models. Be-
-yond the challenge of running statistical inference algorithms, the learned topics and word
-associations must be visualized in a way that is accurate but intuitive.
-
-To make topic modeling algorithms and results more accessible, we built an open source
-web application called Reﬁnery. Reﬁnery allows users to explore a large corpus of documents
-and further identify a small set of relevant documents for careful study. The simple drag
-and drop operation of this toolbox allows researchers to focus on the process of quickly
-understanding their data without being encumbered by the complexities of inference.
-
-2. Running Reﬁnery
-
-Reﬁnery is an in-browser web application that builds on many existing open-source projects
-related to visualization, data management, and machine learning, as shown in Fig. 1. To
-make installation simple, it has only three dependencies: the Git version-control system,
-
-c(cid:13)2017 Kim, Swanson, Hughes and Sudderth.
-License: CC-BY 4.0, see https://creativecommons.org/licenses/by/4.0/. Attribution requirements are provided
-at http://jmlr.org/papers/v18/15-441.html.
-
-Kim, Swanson, Hughes, and Sudderth
-
-(a) Input: Plain-text ﬁles, one
-per document
-
-(b) Output: Interactive visu-
-alization of learned topics
-
-(c) Technology stack
-
-Figure 1: Reﬁnery is a web-application that allows users to upload plain-text documents (a)
-and visualize the semantic themes learned by a topic-model (b). Under the hood,
-Reﬁnery uses many existing technologies (c) for browser interaction, data manage-
-ment, machine learning, and visualization. A video demo is available online: http:
-//youtu.be/7yRQ1J9Z_LI.
-
-Virtualbox (Oracle, 2013), and Vagrant (Hashimoto, 2013). At a Unix-like command line
-with these dependencies installed, running Reﬁnery requires just a few lines of code:
-
-> git clone https :// github . com / d aei lki m / r efi ner y . git
-> vagrant up # launch machine and install r e q u i r e d Python p a c k a g e s
-
-After executing these lines, Reﬁnery can be accessed from a web browser via the local
-address http://11.11.11.11:8080.
-
-3. Topic Modeling
-
-Uploading documents. Users submit documents for analysis in the form of a .zip or
-.tar.gz ﬁle, which uncompressed contains a folder of plain-text ﬁles, one for each individual
-document. Users do not need to preprocess documents or identify a vocabulary in advance.
-This is done automatically by Reﬁnery, which tokenizes every unigram from the input
-documents. The ﬁnal vocabulary excludes very rare and very common words; we discard
-terms appearing in more than 80% of all documents, or in less than 2 documents.
-
-Training a topic model. The topic modeling algorithm used for Reﬁnery comes from
-the BNPy toolbox (Hughes et al., 2015b). Speciﬁcally, we train a hierarchical Dirichlet
-process (HDP) topic model (Teh et al., 2006) using a memoized variational inference algo-
-rithm (Hughes et al., 2015a). While the underlying algorithm has many free parameters,
-we set most of these to smart defaults and only ask the user to specify an upper bound on
-the number of inferred topics. This bound provides a truncation for inﬁnite-dimensional
-HDP model.
-
-Browseable visualization. After training a model, users can explore the resulting topics
-interactively via a multi-colored ring, as shown in Fig. 2. Each segment of the ring represents
-one topic, with its size indicative of the topic’s frequency in the overall corpus. Hovering
+1, 1-27 (1924).
 
-2
-
-Refinery
+7. Vacelet, J. Indications de profondeur donne´s par les Spongiaires dans les milieux benthiques actuels.
 
-Figure 2: The results of an analysis on 500 New York Times articles that contained the keyword
-“obama” during the year 2013. In the ﬁgure above, the “Syria” topic has been selected
-along with a subset of 50 documents related to this topic.
-
-the cursor over a topic’s segment shows the top 50 words associated with that topic. In this
-word cloud visualization, text size is scaled according to the topic-speciﬁc word frequency.
+Ge´ol. Me´diterr. 15, 13–26 (1988).
 
-Focused exploration of document subsets. Often, analysis of large collections re-
-quires identifying subsets of relevant documents and performing more detailed clustering
-of that subset. We support this by allowing the main corpus of documents to be ﬁltered
-by keyword and topic presence. Reﬁnery provides two methods for selecting relevant doc-
-uments given a trained topic model with K topics. The ﬁrst allows the user to directly
-specify a query distribution over topics which recovered documents should emulate. The
-second takes in a list of search terms, and averages the probability of topic given word for
-each term to obtain a (normalized) distribution over K topics. Given this K-dimensional
-query vector, documents are ranked based on the KL divergence between their MAP topic
-distribution and the query.
+8. Maldonado, M. & Young, C. M. Bathymetric patterns of sponge distribution on the Bahamian slope.
 
-4. Phrase Extraction and Reﬁnement
+Deep-Sea Res. I 43, 897–915 (1996).
 
-While topic modeling enables scalable ﬁrst-pass analysis, often the underlying bag-of-words
-assumptions are too limiting. After ﬁltering a large corpus to ﬁnd only documents relevant
-to a small set of topics, Reﬁnery further allows users to explore documents by phrase
-similarity and create a summary of the corpus composed of sentences extracted from the
-input documents.
+9. Lowenstam, H. A. & Weiner, S. On Biomineralization (Oxford Univ., Oxford, 1989).
+10. Maliva, R. G., Knoll, A. H. & Siever, R. Secular change in chert distribution: a reﬂection of evolving
 
-We use the open-source implementation of the Splitta algorithm (Gillick, 2010), which
-Gillick (2009) introduced for sentence boundary detection. First, the Splitta algorithm
-is applied for sentence boundary detection. This algorithm processes raw text and does
-not make use of the topic model output. Next, to help the user eﬃciently select a subset
-of relevant sentences from their corpus, Reﬁnery oﬀers two exploration modes. The ﬁrst,
-triggered by the button marked “Variety”, implements the KLSum algorithm for multidoc-
-ument summarization (Haghighi and Vanderwende, 2009). This algorithm ranks candidate
-sentences higher if their addition to the current set would bring the unigram distribution
-closer to that of the corpus as a whole, intuitively preferring sentences that contain globally
+biological participation in the silica cycle. Palaios 4, 519–532 (1989).
 
-3
+11. Nelson, D. M., Tre´guer, P., Brzezinski, M. A., Leynaert, A. & Que´guiner, B. Production and dissolution
 
-Kim, Swanson, Hughes, and Sudderth
+of biogenic silica in the ocean: revised global estimates, comparison with regional data and
+relationship to biogenic sedimentation. Glob. Biochem. Cycles 9, 359–372 (1995).
 
-Figure 3: Reﬁnery’s phrase extraction feature. Left: User has selected some initial phrases related
-to the war in Syria from news articles. Right: Hitting the “similar” button brings up
-another set of phrases similar to the initial set.
+12. Tre´guer, P. et al. The silica balance in the world ocean: a reestimate. Science 268; 375–379 (1995).
+13. Calvert, S. E. in Silicon Geochemistry and Biogeochemistry (ed. Aston, S. R.) 143–186 (Academic,
 
-relevant information that does not yet appear in the set of selected sentences. The second
-exploration method, labeled “Similar”, simply ranks candidates by cosine similarity to the
-current summary’s unigram distribution. Each sentence in the summary is linked to and
-highlighted in its original source document, facilitating the creation of a comprehensive set
-of notes with fast access to their provenance.
+London, 1983).
 
-5. Discussion and Related Work
+14. Lisitzyn, A. P. Sedimentation in the world ocean. Soc. Econ. Palaeon. Mineral. Spec. Pub. 17, 1–218
 
-Reﬁnery provides a ﬁrst step towards allowing non-technical professionals to explore large
-document collections with modern topic models. Several others groups have strived to
-simplify and democratize the use of topic models. Notably, Chaney and Blei (2012) cre-
-ated a web-based navigator to help users understand the relationship between topics and
-documents, while Chuang et al. (2012) developed a visualization package for assessing the
-goodness of topics. Topicnets (Gretarsson et al., 2012) focuses on a graph-based exploration
-and visualization of topics, while other packages such as Gephi (Bastian et al., 2009) and
-Tethne (Peirson et al., 2015) are often used to create similar visualizations of an already-
-learned set of topics. Most prior work has focused on the parametric latent Dirichlet allo-
-cation (LDA) topic model (Blei et al., 2003).
+(1972).
 
-Reﬁnery diﬀers from these packages in the way it simpliﬁes the entire process of ana-
-lyzing text with topic models for non-expert users. Furthermore, Reﬁnery’s use of scalable
-Bayesian nonparametric topic models oﬀers the beneﬁt of automatic model selection while
-parametric models like LDA require a prior knowledge of the number of topics. Reﬁnery
-also supports phrase extraction, which allows for a more reﬁned search across documents.
-Building on the BNPy toolbox allows potential future extensions to more advanced models
-that cluster documents organized as a time-series or network. Ultimately, we plan to sup-
-port a larger variety of potential document ﬁle types including structured word processor
-ﬁles, spreadsheets, and presentations.
+15. Weinberg, S. De´couvrir la Me´diterrane´e (E´ ditions Nathan, Paris, 1993).
+16. Maldonado, M. & Uriz, M. J. Skeletal morphology of two controversial poecilosclerid genera (Porifera,
 
-4
+Demospongiae): Discorhabdella and Crambe. Helgola¨nder Meeresunters. 50; 369–390 (1996).
 
-Refinery
+17. Hinde, G. J. & Holmes, W. M. On the sponge remains in the Lower Tertiary strata near Oamaru, New
 
-Acknowledgments
+Zealand. J. Linn. Soc. Zool. 24, 177–262 (1892).
 
-Reﬁnery was a recipient of the Knight Prototype Fund in 2014.
+18. Kelly-Borges, M. & Pomponi, S. A. Phylogeny and classiﬁcation of lithisthid sponges (Porifera:
 
-References
+Demospongiae): a preliminary assessment using ribosomal DNA sequence comparisons. Mol. Mar.
+Biol. Biotech. 3, 87–103 (1994).
 
-Mathieu Bastian, Sebastien Heymann, and Mathieu Jacomy. Gephi: An open source software for
-exploring and manipulating networks. In International AAAI Conference on Weblogs and Social
-Media, 2009. URL http://www.aaai.org/ocs/index.php/ICWSM/09/paper/view/154.
+19. Mostler, H. Poriferenspiculae der alpinen Trias. Geol. Pala¨ont. Mitt. Innsbruck. 6, 1–42 (1976).
+20. Palmer, T. J. & Fu¨rsich, F. T. Ecology of sponge reefs from the Upper Bathonian of Normandy.
 
-David M Blei. Probabilistic topic models. Communications of the ACM, 55(4):77–84, 2012.
+Palaeontology 24, 1–23 (1981).
 
-David M. Blei, Andrew Y. Ng, and Michael I. Jordan. Latent Dirichlet allocation. J. Mach. Learn.
+21. Burckle, L. H. in Introduction to Marine Micropaleontology (eds Haq, B. U. & Boersma, A.) 245–266
 
-Res., 3:993–1022, 2003.
+(Elsevier, Amsterdam, 1978).
 
-Allison June-Barlow Chaney and David M Blei. Visualizing topic models. In ICWSM, 2012.
+22. Austin, B. Underwater birdwatching. Canadian Tech. Rep. Hydro. Ocean. Sci. 38, 83–90 (1984).
+23. Koltun, V. M. in The Biology of the Porifera (ed. Fry, W. G.) 285–297 (Academic, London, 1970).
+24. Tabachnick, K. R. in Sponges in Time and Space (eds van Soest, R. M. W., van Kempen, T. M. G. &
 
-Jason Chuang, Christopher D. Manning, and Jeﬀrey Heer. Termite: Visualization techniques for
-assessing textual topic models. In Advanced Visual Interfaces, 2012. URL http://vis.stanford.
-edu/papers/termite.
+Braekman, J. C.) 225–232 (A. A. Balkema, Rotterdam, 1994).
 
-Dan Gillick. Sentence boundary detection and the problem with the U.S. In Proceedings of Human
-Language Technologies: The 2009 Annual Conference of the North American Chapter of the
-Association for Computational Linguistics, Companion Volume: Short Papers, pages 241–244.
-Association for Computational Linguistics, 2009.
+25. Harper, H. E. & Knoll, A. H. Silica, diatoms and Cenozoic radiolarian evolution. Geology 3, 175–177
 
-Daniel Gillick. splitta: statistical sentence boundary detection, 2010. URL https://code.google.
+(1975).
 
-com/p/splitta/.
-
-Brynjar Gretarsson, John Odonovan, Svetlin Bostandjiev, Tobias H¨ollerer, Arthur Asuncion, David
-Newman, and Padhraic Smyth. Topicnets: Visual analysis of large text corpora with topic mod-
-eling. ACM Transactions on Intelligent Systems and Technology (TIST), 3(2):23, 2012.
-
-Aria Haghighi and Lucy Vanderwende. Exploring content models for multi-document summarization.
-In Proceedings of Human Language Technologies: The 2009 Annual Conference of the North
-American Chapter of the Association for Computational Linguistics, pages 362–370. Association
-for Computational Linguistics, 2009.
-
-Mitchell Hashimoto. Vagrant: Up and Running. O’Reilly Media, Inc., 2013. URL http://www.
-
-vagrantup.com.
-
-Michael C. Hughes, Daeil Kim, and Erik B. Sudderth. Reliable and scalable variational inference
-
-for the hierarchical dirichlet process. In AISTATS, 2015a.
-
-Michael C. Hughes et al. BNPy: Bayesian nonparametric machine learning for Python, 2015b. URL
-
-https://github.com/bnpy/bnpy/.
-
-Oracle. Virtualbox, 2013. URL http://www.virtualbox.org. Version 4.2.18.
-
-Erick Peirson, Aaron Baker, and Ramki Subramanian. Tethne: Bibliographic network analysis in
-
-Python, 2015. URL https://github.com/diging/tethne.
-
-Y. W. Teh, M. I. Jordan, M. J. Beal, and D. M. Blei. Hierarchical Dirichlet processes. JASA, 101
-
-(476):1566–1581, 2006.
-
-5
-
+26. Hartman, W. D. in Silicon and Siliceous Structures in Biological Systems (eds Simpson, T. L. & Volcani,
+
+B. E.) 453–493 (Springer Verlag, New York, 1981).
+
+27. Pisera, A. Upper Jurassic siliceous sponges from Swabian Alb: taxonomy and paleoecology. Palaeont.
+
+Pol. 57, 1–216 (1997).
+
+28. Reincke, T. & Barthel, D. Silica uptake kinetics of Halichondria panicea in Kiel Bight. Mar. Biol. 129,
+
+591–593 (1997).
+
+29. Grasshoff, K., Ehrardt, M. & Kremling, K. Methods of Seawater Analysis (Verlag Chemie, Weinheim,
+
+1983).
+
+30. Maldonado, M. & Uriz, M. J. An experimental approach to the ecological signiﬁcance of microhabitat-
+
+scale movement in an encrusting sponge. Mar. Ecol. Prog. Ser. 185, 239–255 (1999).
+
+Acknowledgements
+We thank S. Pla for help with nutrient analyses, technicians of the Servicio de Microscopia
+for help with SEM, and E. Ballesteros, C. M. Young, A. Pisera and R. Rycroft for comments
+on the manuscript.
+
+Correspondence and requests for materials should be addressed to M.M.
+(e-mail: maldonado@ceab.csic.es).
+
+.................................................................
+Learning the parts of objects by
+non-negative matrix factorization
+
+Daniel D. Lee* & H. Sebastian Seung*†
+
+* Bell Laboratories, Lucent Technologies, Murray Hill, New Jersey 07974, USA
+† Department of Brain and Cognitive Sciences, Massachusetts Institute of
+Technology, Cambridge, Massachusetts 02139, USA
+
+.......................................... ......................... ......................... ......................... .........................
+Is perception of the whole based on perception of its parts? There
+is psychological1 and physiological2,3 evidence for parts-based
+representations in the brain, and certain computational theories
+of object recognition rely on such representations4,5. But little is
+known about how brains or computers might learn the parts of
+objects. Here we demonstrate an algorithm for non-negative
+matrix factorization that is able to learn parts of faces and
+semantic features of text. This is in contrast to other methods,
+such as principal components analysis and vector quantization,
+that learn holistic, not parts-based, representations. Non-negative
+matrix factorization is distinguished from the other methods by
+its use of non-negativity constraints. These constraints lead to a
+parts-based representation because they allow only additive, not
+subtractive, combinations. When non-negative matrix factoriza-
+tion is implemented as a neural network, parts-based representa-
+tions emerge by virtue of two properties: the ﬁring rates of
+neurons are never negative and synaptic strengths do not
+change sign.
+
+We have applied non-negative matrix factorization (NMF),
+together with principal components analysis (PCA) and vector
+quantization (VQ), to a database of facial images. As shown in
+Fig. 1, all three methods learn to represent a face as a linear
+combination of basis images, but with qualitatively different results.
+VQ discovers a basis consisting of prototypes, each of which is a
+whole face. The basis images for PCA are ‘eigenfaces’, some of which
+resemble distorted versions of whole faces6. The NMF basis is
+radically different: its images are localized features that correspond
+better with intuitive notions of the parts of faces.
+
+How does NMF learn such a representation, so different from the
+holistic representations of PCA and VQ? To answer this question, it
+is helpful to describe the three methods in a matrix factorization
+framework. The image database is regarded as an n 3 m matrix V,
+each column of which contains n non-negative pixel values of one of
+the m facial images. Then all three methods construct approximate
+factorizations of the form V < WH, or
+< ðWHÞim ¼ ^r
+
+W iaHam
+
+V im
+
+ð1Þ
+
+a¼1
+
+The r columns of W are called basis images. Each column of H is
+called an encoding and is in one-to-one correspondence with a face
+in V. An encoding consists of the coefﬁcients by which a face is
+represented with a linear combination of basis images. The dimen-
+sions of the matrix factors W and H are n 3 r and r 3 m, respec-
+tively. The rank r of the factorization is generally chosen so that
+ðn þ mÞr , nm, and the product WH can be regarded as a com-
+pressed form of the data in V.
+
+The differences between PCA, VQ and NMF arise from different
+constraints imposed on the matrix factors W and H. In VQ, each
+column of H is constrained to be a unary vector, with one element
+equal to unity and the other elements equal to zero. In other words,
+every face (column of V) is approximated by a single basis image
+(column of W) in the factorization V < WH. Such a unary encod-
+ing for a particular face is shown next to the VQ basis in Fig. 1. This
+unary representation forces VQ to learn basis images that are
+prototypical faces.
+
+788
+
+© 1999 Macmillan Magazines Ltd
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+letters to nature
+
+PCA constrains the columns of W to be orthonormal and the
+rows of H to be orthogonal to each other. This relaxes the unary
+constraint of VQ, allowing a distributed representation in which
+each face is approximated by a linear combination of all the basis
+images, or eigenfaces6. A distributed encoding of a particular face is
+shown next to the eigenfaces in Fig. 1. Although eigenfaces have a
+statistical interpretation as the directions of largest variance, many
+of them do not have an obvious visual interpretation. This is
+because PCA allows the entries of W and H to be of arbitrary sign.
+As the eigenfaces are used in linear combinations that generally
+involve complex cancellations between positive and negative
+numbers, many individual eigenfaces lack intuitive meaning.
+
+NMF does not allow negative entries in the matrix factors W and
+H. Unlike the unary constraint of VQ, these non-negativity con-
+straints permit the combination of multiple basis images to repre-
+sent a face. But only additive combinations are allowed, because the
+non-zero elements of W and H are all positive. In contrast to PCA,
+no subtractions can occur. For these reasons, the non-negativity
+constraints are compatible with the intuitive notion of combining
+parts to form a whole, which is how NMF learns a parts-based
+representation.
+
+As can be seen from Fig. 1, the NMF basis and encodings contain
+a large fraction of vanishing coefﬁcients, so both the basis images
+and image encodings are sparse. The basis images are sparse because
+they are non-global and contain several versions of mouths, noses
+and other facial parts, where the various versions are in different
+locations or forms. The variability of a whole face is generated by
+combining these different parts. Although all parts are used by at
+
+least one face, any given face does not use all the available parts. This
+results in a sparsely distributed image encoding, in contrast to the
+unary encoding of VQ and the fully distributed PCA encoding7–9.
+We implemented NMF with the update rules for Wand H given in
+Fig. 2. Iteration of these update rules converges to a local maximum
+of the objective function
+
+F ¼ ^n
+
+^m
+
+½V imlogðWHÞim
+
+2 ðWHÞimÿ
+
+i¼1
+
+m¼1
+
+ð2Þ
+
+subject to the non-negativity constraints described above. This
+objective function can be derived by interpreting NMF as a
+method for constructing a probabilistic model of image generation.
+In this model, an image pixel Vim is generated by adding Poisson
+noise to the product (WH)im. The objective function in equation (2)
+is then related to the likelihood of generating the images in V from
+the basis W and encodings H.
+
+The exact form of the objective function is not as crucial as the
+non-negativity constraints for the success of NMF in learning parts.
+A squared error objective function can be optimized with update
+rules for W and H different from those in Fig. 2 (refs 10, 11). These
+update rules yield results similar to those shown in Fig. 1, but have
+the technical disadvantage of requiring the adjustment of a parameter
+controlling the learning rate. This parameter is generally adjusted
+through trial and error, which can be a time-consuming process if
+the matrix V is very large. Therefore, the update rules described in
+Fig. 2 may be advantageous for applications involving large data-
+bases.
+
+Figure 1 Non-negative matrix factorization (NMF) learns a parts-based representation of
+faces, whereas vector quantization (VQ) and principal components analysis (PCA) learn
+holistic representations. The three learning methods were applied to a database of
+m ¼ 2;429 facial images, each consisting of n ¼ 19 3 19 pixels, and constituting an
+n3 mmatrix V. All three ﬁnd approximate factorizations of the form V < WH, but with
+three different types of constraints on Wand H, as described more fully in the main text
+and methods. As shown in the 7 3 7 montages, each method has learned a set of
+r ¼ 49 basis images. Positive values are illustrated with black pixels and negative values
+with red pixels. A particular instance of a face, shown at top right, is approximately
+represented by a linear superposition of basis images. The coefﬁcients of the linear
+superposition are shown next to each montage, in a 7 3 7 grid, and the resulting
+superpositions are shown on the other side of the equality sign. Unlike VQ and PCA, NMF
+learns to represent faces with a set of basis images resembling parts of faces.
+
+NMF
+
+VQ
+
+PCA
+
+Original
+
+=
+
+=
+
+=
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+© 1999 Macmillan Magazines Ltd
+
+789
+
+·
+·
+·
+letters to nature
+
+It is helpful to visualize the dependencies between image pixels
+and encoding variables in the form of the network shown in Fig. 3.
+The top layer of nodes represents an encoding h1,…,hr (column of
+H), and the bottom layer an image v1,…,vn (column of V). The
+matrix element Wia quantiﬁes the amount of inﬂuence that the ath
+encoding variable ha has on the ith image pixel vi. A single encoding
+variable inﬂuences multiple image pixels, owing to the fan-out of
+connections from the encoding variable. Because of the non-
+negativity of Wia, this inﬂuence is restricted to coactivation of
+image pixels. Intuitively, a parts-based representation should be
+learnable from observations of coactivation in V, as the image pixels
+belonging to the same part of the face are coactivated when that part
+is present. NMF learns by adapting Wia to generate the appropriate
+coactivations.
+
+The preceding description of NMF has been specialized to
+images, but the algorithm is actually applicable to a wide variety
+of problem domains. More generally, NMF is a method for
+modelling the generation of directly observable visible variables V
+from hidden variables H (refs 12, 13). Each hidden variable
+coactivates a subset of visible variables, or ‘part’. Activation of a
+constellation of hidden variables combines these parts additively to
+generate a whole. Seen in this light, NMF has a very broad range of
+potential applications. We illustrate this versatility by applying
+NMF to a completely different problem, the semantic analysis of
+text documents.
+
+For this application, a corpus of documents is summarized by a
+matrix V, where Vim is the number of times the ith word in the
+vocabulary appears in the mth document14. These word counts can
+be regarded as a set of visible variables and modelled as being
+generated from an underlying set of hidden variables. Application of
+VQ, PCA or NMF involves ﬁnding the approximate factorization of
+this matrix V < WH into a feature set W and hidden variables H, in
+the same way as was done for faces.
+
+In the VQ factorization, a single hidden variable is active for each
+document. If the same hidden variable is active for a group of
+documents, they are semantically related, because they have similar
+frequencies of word occurrence. Consequently, the hidden variables
+are called semantic variables, and VQ is accordingly used for
+automatic semantic indexing of documents by topic14. Each
+column of W, or semantic feature, consists of the word frequencies
+for the corresponding semantic variable.
+
+VQ allows only one semantic variable to be active, which prevents
+more than one topic from being attributed to a document. PCA
+would seem to be a solution to this problem, as it allows activation
+of multiple semantic variables. Although PCA has been successful in
+
+certain linguistic tasks15, it generally results in semantic variables
+that are difﬁcult to interpret, for much the same reason that the PCA
+representation of faces has no obvious visual interpretation. This is
+the result of two unrealistic aspects of the model: all semantic
+variables are used to represent each document; and negative values
+for semantic variables are allowed. Intuitively, it makes more sense
+for each document to be associated with some small subset of a large
+array of topics, rather than just one topic or all the topics. Because
+the sparsely distributed representation of NMF appears ideally
+suited for this purpose, we applied NMF to the semantic analysis
+of a corpus of encyclopedia articles.
+
+Some of the semantic features (r ¼ 200, columns of W) discov-
+ered by NMF are shown in Fig. 4. In each semantic feature, the
+algorithm has grouped together semantically related words. Each
+article in the encyclopedia is represented by additively combining
+several of these features. For example, to represent the article about
+the ‘Constitution of the United States’, the semantic feature contain-
+ing ‘supreme’ and ‘court’ and the one containing ‘president’ and
+‘congress’ are coactivated.
+
+In addition to grouping semantically related words together into
+semantic features, the algorithm uses context to differentiate
+between multiple meanings of the same word. For example, the
+word ‘lead’ appears with high frequency in two semantic features
+shown in Fig. 4: it occurs with ‘metal’, ‘copper’ and ‘steel’ in one,
+whereas it appears with ‘person’, ‘rules’ and ‘law’ in the other. This
+demonstrates that NMF can deal with the polysemy of ‘lead’ by
+disambiguating two of its meanings in the corpus of documents.
+
+Although NMF is successful in learning facial parts and semantic
+topics, this success does not imply that the method can learn parts
+from any database, such as images of objects viewed from extremely
+different viewpoints, or highly articulated objects. Learning parts
+for these complex cases is likely to require fully hierarchical models
+with multiple levels of hidden variables, instead of the single level in
+NMF. Although non-negativity constraints may help such models
+to learn parts-based representations13, we do not claim that they are
+sufﬁcient in themselves. Also, NMF does not learn anything about
+the ‘syntactic’ relationships between parts. NMF assumes that the
+hidden variables are non-negative, but makes no further assumptions
+about their statistical dependencies.
+
+This is in contrast to independent components analysis (ICA),
+a variant of PCA that assumes that the hidden variables are
+statistically independent and non-gaussian16,12. Applying ICA to
+the facial images to make the encodings independent results in basis
+images that are holistic. The independence assumption of ICA is ill-
+suited for learning parts-based representations because various
+
+W
+ia
+
+W
+ia
+
+m
+
+W
+ia
+
+H
+
+m
+
+a
+
+V
+m
+i
+(
+WH
+
+)
+
+m
+i
+
+W
+ia
+W
+
+j
+
+ja
+
+H
+
+m
+a
+
+H
+
+m
+a
+
+W
+ia
+
+V
+m
+i
+(
+WH
+
+)
+
+m
+i
+
+i
+
+W
+
+v1
+
+h1
+
+. . .
+
+hr
+
+. . .
+
+Æ væ  = Wh
+
+vn
+
+Figure 2 Iterative algorithm for non-negative matrix factorization. Starting from non-
+negative initial conditions for Wand H, iteration of these update rules for non-negative V
+ﬁnds an approximate factorization V < WH by converging to a local maximum of the
+objective function given in equation (2). The ﬁdelity of the approximation enters the
+updates through the quotient Vim/(WH)im. Monotonic convergence can be proven using
+techniques similar to those used in proving the convergence of the EM algorithm22,23. The
+update rules preserve the non-negativity of Wand Hand also constrain the columns of W
+to sum to unity. This sum constraint is a convenient way of eliminating the degeneracy
+associated with the invariance of WHunder the transformation W! WL, H! L 2 1H,
+where L is a diagonal matrix.
+
+Figure 3 Probabilistic hidden variables model underlying non-negative matrix
+factorization. The model is diagrammed as a network depicting how the visible variables
+v1,…,vnin the bottom layer of nodes are generated from the hidden variables h1,…,hrin
+the top layer of nodes. According to the model, the visible variables viare generated from a
+probability distribution with mean SaWiaha. In the network diagram, the inﬂuence of ha
+on viis represented by a connection with strength Wia. In the application to facial images,
+the visible variables are the image pixels, whereas the hidden variables contain the parts-
+based encoding. For ﬁxed a, the connection strengths W1a,…,Wna constitute a speciﬁc
+basis image (right middle) which is combined with other basis images to represent a whole
+facial image (right bottom).
+
+790
+
+© 1999 Macmillan Magazines Ltd
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+(cid:229)
+‹
+(cid:229)
+‹
+(cid:229)
+‹
+parts are likely to occur together. This results in complex depen-
+dencies between the hidden variables that cannot be captured by
+algorithms that assume independence in the encodings. An alter-
+native application of ICA is to transform the PCA basis images, to
+make the images rather than the encodings as statistically indepen-
+dent as possible18. This results in a basis that is non-global; however,
+in this representation all the basis images are used in cancelling
+combinations to represent an individual face, and thus the encod-
+ings are not sparse. In contrast, the NMF representation contains
+both a basis and encoding that are naturally sparse, in that many of
+the components are exactly equal to zero. Sparseness in both the
+basis and encodings is crucial for a parts-based representation.
+
+The algorithm of Fig. 2 performs both learning and inference
+simultaneously. That is, it both learns a set of basis images and
+infers values for the hidden variables from the visible variables.
+Although the generative model of Fig. 3 is linear, the inference
+computation is nonlinear owing to the non-negativity constraints.
+The computation is similar to maximum likelihood reconstruction
+in emission tomography19, and deconvolution of blurred astro-
+nomical images20,21.
+
+According to the generative model of Fig. 3, visible variables are
+generated from hidden variables by a network containing excitatory
+connections. A neural network that infers the hidden from the
+visible variables requires the addition of inhibitory feedback con-
+nections. NMF learning is then implemented through plasticity in
+the synaptic connections. A full discussion of such a network is
+beyond the scope of this letter. Here we only point out the
+
+court
+government
+council
+culture
+supreme
+constitutional
+rights
+justice
+
+president
+served
+governor
+secretary
+senate
+congress
+presidential
+elected
+
+flowers
+leaves
+plant
+perennial
+flower
+plants
+growing
+annual
+
+disease
+behaviour
+glands
+contact
+symptoms
+skin
+pain
+infection
+
+Encyclopedia entry:
+'Constitution of the
+
+United States'
+
+president (148)
+congress (124)
+power (120)
+united (104)
+constitution (81)
+amendment (71)
+government (57)
+law (49)
+
+metal process method paper ... glass copper lead steel
+
+person example time people ... rules lead leads law
+
+Figure 4 Non-negative matrix factorization (NMF) discovers semantic features of
+m ¼ 30;991 articles from the Grolier encyclopedia. For each word in a vocabulary of size
+n ¼ 15;276, the number of occurrences was counted in each article and used to form the
+15;276 3 30;991 matrix V. Each column of Vcontained the word counts for a particular
+article, whereas each row of Vcontained the counts of a particular word in different
+articles. The matrix was approximately factorized into the form WHusing the algorithm
+described in Fig. 2. Upper left, four of the r ¼ 200 semantic features (columns of W). As
+they are very high-dimensional vectors, each semantic feature is represented by a list of
+the eight words with highest frequency in that feature. The darkness of the text indicates
+the relative frequency of each word within a feature. Right, the eight most frequent words
+and their counts in the encyclopedia entry on the ‘Constitution of the United States’. This
+word count vector was approximated by a superposition that gave high weight to the
+upper two semantic features, and none to the lower two, as shown by the four shaded
+squares in the middle indicating the activities of H. The bottom of the ﬁgure exhibits the
+two semantic features containing ‘lead’ with high frequencies. Judging from the other
+words in the features, two different meanings of ‘lead’ are differentiated by NMF.
+
+letters to nature
+
+consequence of
+the non-negativity constraints, which is that
+synapses are either excitatory or inhibitory, but do not change
+sign. Furthermore, the non-negativity of the hidden and visible
+variables corresponds to the physiological fact that the ﬁring rates of
+neurons cannot be negative. We propose that the one-sided con-
+straints on neural activity and synaptic strengths in the brain may be
+important for developing sparsely distributed, parts-based repre-
+M
+sentations for perception.
+
+Methods
+The facial images used in Fig. 1 consisted of frontal views hand-aligned in a 19 3 19 grid.
+For each image, the greyscale intensities were ﬁrst linearly scaled so that the pixel mean and
+standard deviation were equal to 0.25, and then clipped to the range [0,1]. NMF was
+performed with the iterative algorithm described in Fig. 2, starting with random initial
+conditions for W and H. The algorithm was mostly converged after less than 50 iterations;
+the results shown are after 500 iterations, which took a few hours of computation time on a
+Pentium II computer. PCA was done by diagonalizing the matrix VVT. The 49 eigenvectors
+with the largest eigenvalues are displayed. VQ was done via the k-means algorithm,
+starting from random initial conditions for W and H.
+
+In the semantic analysis application of Fig. 4, the vocabulary was deﬁned as the 15,276
+most frequent words in the database of Grolier encyclopedia articles, after removal of the
+430 most common words, such as ‘the’ and ‘and’. Because most words appear in relatively
+few articles, the word count matrix V is extremely sparse, which speeds up the algorithm.
+The results shown are after the update rules of Fig. 2 were iterated 50 times starting from
+random initial conditions for W and H.
+
+Received 24 May; accepted 6 August 1999.
+
+1. Palmer, S. E. Hierarchical structure in perceptual representation. Cogn. Psychol. 9, 441–474 (1977).
+2. Wachsmuth, E., Oram, M. W. & Perrett, D. I. Recognition of objects and their component parts:
+responses of single units in the temporal cortex of the macaque. Cereb. Cortex 4, 509–522 (1994).
+3. Logothetis, N. K. & Sheinberg, D. L. Visual object recognition. Annu. Rev. Neurosci. 19, 577–621
+
+(1996).
+
+4. Biederman, I. Recognition-by-components: a theory of human image understanding. Psychol. Rev. 94,
+
+115–147 (1987).
+
+5. Ullman, S. High-Level Vision: Object Recognition and Visual Cognition (MIT Press, Cambridge, MA,
+
+1996).
+
+6. Turk, M. & Pentland, A. Eigenfaces for recognition. J. Cogn. Neurosci. 3, 71–86 (1991).
+7. Field, D. J. What is the goal of sensory coding? Neural Comput. 6, 559–601 (1994).
+8. Foldiak, P. & Young, M. Sparse coding in the primate cortex. The Handbook of Brain Theory and
+
+Neural Networks 895–898 (MIT Press, Cambridge, MA, 1995).
+
+9. Olshausen, B. A. & Field, D. J. Emergence of simple-cell receptive ﬁeld properties by learning a sparse
+
+code for natural images. Nature 381, 607–609 (1996).
+
+10. Lee, D. D. & Seung, H. S. Unsupervised learning by convex and conic coding. Adv. Neural Info. Proc.
+
+Syst. 9, 515–521 (1997).
+
+11. Paatero, P. Least squares formulation of robust non-negative factor analysis. Chemometr. Intell. Lab.
+
+37, 23–35 (1997).
+
+12. Nakayama, K. & Shimojo, S. Experiencing and perceiving visual surfaces. Science 257, 1357–1363
+
+(1992).
+
+13. Hinton, G. E., Dayan, P., Frey, B. J. & Neal, R. M. The ‘‘wake-sleep’’ algorithm for unsupervised neural
+
+networks. Science 268, 1158–1161 (1995).
+
+14. Salton, G. & McGill, M. J. Introduction to Modern Information Retrieval (McGraw-Hill, New York,
+
+1983).
+
+15. Landauer, T. K. & Dumais, S. T. The latent semantic analysis theory of knowledge. Psychol. Rev. 104,
+
+211–240 (1997).
+
+16. Jutten, C. & Herault, J. Blind separation of sources, part I: An adaptive algorithm based on
+
+neuromimetic architecture. Signal Proc. 24, 1–10 (1991).
+
+17. Bell, A. J. & Sejnowski, T. J. An information maximization approach to blind separation and blind
+
+deconvolution. Neural Comput. 7, 1129–1159 (1995).
+
+18. Bartlett, M. S., Lades, H. M. & Sejnowski, T. J. Independent component representations for face
+
+recognition. Proc. SPIE 3299, 528–539 (1998).
+
+19. Shepp, L. A. & Vardi, Y. Maximum likelihood reconstruction for emission tomography. IEEE Trans.
+
+Med. Imaging. 2, 113–122 (1982).
+
+20. Richardson, W. H. Bayesian-based iterative method of image restoration. J. Opt. Soc. Am. 62, 55–59
+
+(1972).
+
+21. Lucy, L. B. An iterative technique for the rectiﬁcation of observed distributions. Astron. J. 74, 745–754
+
+(1974).
+
+22. Dempster, A. P., Laired, N. M. & Rubin, D. B. Maximum likelihood from incomplete data via the EM
+
+algorithm. J. Royal Stat. Soc. 39, 1–38 (1977).
+
+23. Saul, L. & Pereira, F. Proceedings of the Second Conference on Empirical Methods n Natural Language
+
+Processing (eds Cardie, C. & Weischedel, R.) 81–89 (Morgan Kaufmann, San Francisco, 1997).
+
+Acknowledgements
+We acknowledge the support of Bell Laboratories and MIT. C. Papageorgiou and T. Poggio
+provided us with the database of faces, and R. Sproat with the Grolier encyclopedia corpus.
+We thank L. Saul for convincing us of the advantages of EM-type algorithms. We have
+beneﬁted from discussions with B. Anderson, K. Clarkson, R. Freund, L. Kaufman,
+E. Rietman, S. Roweis, N. Rubin, J. Tenenbaum, N. Tishby, M. Tsodyks, T. Tyson and
+M. Wright.
+
+Correspondence and requests for materials should be addressed to H.S.S.
+
+NATURE | VOL 401 | 21 OCTOBER 1999 | www.nature.com
+
+© 1999 Macmillan Magazines Ltd
+
+791
+
+·
+»
 
