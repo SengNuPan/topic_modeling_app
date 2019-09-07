@@ -204,7 +204,7 @@ def preclean(rawtext):
     with open(folder_path+'test.txt','w',encoding='utf-8') as f:
         f.write(rawtext)
     f.close()
-    with open(folder_path+test.txt','r',encoding='utf-8') as f:
+    with open(folder_path+'test.txt','r',encoding='utf-8') as f:
         data=f.read().lower()
     f.close()
     sentences=split_into_sentences(data)
