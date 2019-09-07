@@ -9,6 +9,22 @@
   <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="static/css/jqcloud.css" />
 
+  <script type="text/javascript">
+    function ShowLoading(e) {
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = 'static/image/load_me.gif';
+        div.innerHTML = "Loading...<br />";
+        div.style.cssText = 'position: fixed; top: 55%; left: 40%; z-index: 5000; width: 422px; text-align: center;color:#6e6e6e';
+        div.appendChild(img);
+        document.body.appendChild(div);
+        return true;
+        // These 2 lines cancel form submission, so only use if needed.
+        //window.event.cancelBubble = true;
+        //e.stopPropagation();
+    }
+</script>
+
 
 </head>
 <body>
@@ -38,12 +54,12 @@
     <div class="section-content">
     <h2 class="h1">Too busy to check each <b>PDF</b> file to see what's about?</h2>
     <p class="h3"><i>Here is WordCloud visualization for your text!!</i></p>
-    <form method="post" action="/viewText" enctype="multipart/form-data" id="myForm">
+    <form method="post" action="/viewText" enctype="multipart/form-data" id="myForm" onsubmit="ShowLoading()">
         <h1 fontsize="1px">Choose <b>pdf</b> file only...</h1><br>
         <input type="file" name="file" accept=".pdf"/><br><br>
-        <input type="submit"  class="btn-primary" value="Visualize" onclick="$('#loading').show();">
+        <input type="submit"  class="btn-primary" value="Visualize">
       </form>
-<div id="loading" class="loading_css" style="display:none;"><img src="static/image/load_me.gif" alt=""></div>
+<div id="loading" class="loading_css" style="display:none"><img src="static/image/load_me.gif" alt=""></div>
 
 
 </div>

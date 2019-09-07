@@ -8,6 +8,22 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="static/css/jqcloud.css" />
+  <script type="text/javascript">
+    function ShowLoading(e) {
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = 'static/image/load_me.gif';
+        div.innerHTML = "Processing...<br />";
+        div.style.cssText = 'position: fixed; top: 40%; left: 36%; z-index: 5000; width: 422px; text-align: center;color:#6e6e6e';
+        div.appendChild(img);
+        document.body.appendChild(div);
+        return true;
+        // These 2 lines cancel form submission, so only use if needed.
+        //window.event.cancelBubble = true;
+        //e.stopPropagation();
+    }
+</script>
+
 
 
 </head>
@@ -31,15 +47,16 @@
       {% endfor %}
       {% endif %}
     {% endwith %}
-    <form action="/preprocess" method="post" enctype="multipart/form-data">
+    <form action="/preprocess" method="post" enctype="multipart/form-data" onsubmit="ShowLoading()">
             <p class="h3">Choose PDF file to analyse:</p> <input type="file" name="file" accept=".pdf"/>
                 <input type="submit" class="btn-clean" value="Clean & show topic number" onclick="$('#loading').show();"/><br><br><br>
                 <center>
-                  <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="$('#loading').show();">Visualize with BarGraph</a>
-                  <a href="{{ url_for('piechart')}}" class="btn-primary" onclick="$('#loading').show();">Visualize with PieChart</a>
+                  <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="ShowLoading()">Visualize with BarGraph</a>
+                  <a href="{{ url_for('piechart')}}" class="btn-primary" onclick="ShowLoading()">Visualize with PieChart</a>
                 </center>
     </form>
-    <div id="loading" class="loading_css" style="dislplay:none;"><img src="static/image/load_me.gif" alt="" /></div>
+
+
     <div class="section-content">
     </div>
   </main>

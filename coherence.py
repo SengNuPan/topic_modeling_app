@@ -208,11 +208,11 @@ def preclean(rawtext):
         data=f.read().lower()
     f.close()
     sentences=split_into_sentences(data)
-    lemmatizer=WordNetLemmatizer()
+    """lemmatizer=WordNetLemmatizer()
     for i in range(len(sentences)):
         words=nltk.word_tokenize(sentences[i])
         newwords=[lemmatizer.lemmatize(word)for word in words]
-        sentences[i]=' '.join(newwords)
+        sentences[i]=' '.join(newwords)"""
     custom_stop_words = []
     with open( "data/stopwords.txt", "r" ) as fin:
         for line in fin.readlines():

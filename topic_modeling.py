@@ -17,7 +17,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from wordcloud import WordCloud
-from nltk.tokenize import word_tokenize
+#from nltk.tokenize import word_tokenize
 from collections import Counter
 import base64
 from sklearn import preprocessing
