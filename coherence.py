@@ -39,7 +39,7 @@ import errno
 from sklearn.datasets import fetch_20newsgroups
 newsgroups_train = fetch_20newsgroups(subset='train')
 
-nltk.data.path.append('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/nltk_data')
+#nltk.data.path.append('C:/Users/Seng Nu Pan/Desktop/topic_modeling_wiht_flask/nltk_data')
 
 alphabets= "([A-Za-z])"
 prefixes = "(Mr|St|Mrs|Ms|Dr|Prof|Capt|Cpt|Lt|Mt)[.]"
@@ -184,7 +184,6 @@ class TokenGenerator:
 def topic_modeling(n_components, init="nndsvd",alpha=.1, l1_ratio=.5):
     nmf_f = NMF(n_components=n_components, random_state=10,alpha=alpha,l1_ratio=l1_ratio)
     return nmf_f
-
 
 def display_labels(H, W,documents):
     result=[]

@@ -227,7 +227,6 @@ def preprocess():
 
                 joblib.dump((lone,clean_sentences),"raw_clean.pkl")
                 return send_file(return_url,attachment_filename='plot.png',mimetype='image/png')
-
-
+                
 if __name__=="__main__":
     app.run(debug=True)
