@@ -9,7 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import decomposition
 import joblib
 from gensim.models import Word2Vec
-from coherence import convert_pdf_to_txt,split_into_sentences,preclean,topic_modeling,plot_top_term_weights
+from coherence import display_labels,label_document,convert_pdf_to_txt,label_document,split_into_sentences,preclean,topic_modeling,plot_top_term_weights
 from sklearn.decomposition import NMF
 import collections
 import numpy as np
@@ -17,6 +17,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from wordcloud import WordCloud
+import seaborn as sns
+from time import time
+sns.set_style('whitegrid')
+
 #from nltk.tokenize import word_tokenize
 from collections import Counter
 import base64
@@ -62,6 +66,19 @@ def about():
 def view():
     return render_template("view.html")
 
+@app.route("/rawView")
+def rawView():
+    (raw,clean_sentences)=joblib.load("raw_clean.pkl")
+
+    return render_template("contents.html",contents=raw)
+
+@app.route("/afterClean")
+def afterClean():
+    (raw,clean_sentences)=joblib.load("raw_clean.pkl")
+
+
+    return render_template("contents.html",contents=clean_sentences)
+
 @app.route('/viewText', methods=['POST'])
 def viewText():
     if request.method == 'POST':
@@ -79,6 +96,7 @@ def viewText():
             _mkdir_p(folder_path)
             file.save(os.path.join(folder_path, filename))
             lone=convert_pdf_to_txt(folder_path+ filename)
+
             with open(folder_path+'rawfile.txt','w',encoding='utf-8') as f:
                 f.write(lone)
             f.close()
@@ -114,15 +132,20 @@ def viewText():
 @app.route('/top_term_weight')
 def top_term_weight():
     plots = []
-    (W,H,k,dtm_terms,A,A_norm)=joblib.load("best_paras.pkl")
+    (W,H,k,dtm_terms,A,tfidf,clean_data)=joblib.load("best_paras.pkl")
+    array=label_document(clean_data)
+    df=array.to_frame(name='Name')
+    my_list = df["Name"].tolist()
+    #data=(my_list,len(my_list))
+
     for topic_index in range(k):
-        plot=plot_top_term_weights( dtm_terms, H, topic_index, 8 )
+        plot=plot_top_term_weights( dtm_terms, H, topic_index, 8)
         plots.append(plot)
-    return render_template('result.html', articles=plots)
+    return render_template('result.html', articles=plots,result=my_list)
 
 @app.route('/piechart')
 def piechart():
-    (W,H,k,dtm_terms,A,A_norm)=joblib.load("best_paras.pkl")
+    (W,H,k,dtm_terms,A,tfidf,clean_data)=joblib.load("best_paras.pkl")
     X_topics_norm = preprocessing.normalize(W, norm='l2')
     columns = [str(i) for i in range(0,k)]
     dtm_to_topic = pd.DataFrame(X_topics_norm,columns=columns)
@@ -150,8 +173,30 @@ def piechart():
     fig.seek(0)
     result= base64.b64encode(fig.getvalue()).decode()
     plt.close()
-    #return send_file(fig,mimetype='image/png')
-    return render_template('overall.html',piechart=result)
+    terms=tfidf.get_feature_names()
+
+    total_counts = np.zeros(len(terms))
+    for t in A:
+        total_counts+=t.toarray()[0]
+    count_dict = (zip(terms, total_counts))
+    count_dict = sorted(count_dict, key=lambda x:x[1], reverse=True)[0:8]
+    words = [w[0] for w in count_dict]
+    counts = [w[1] for w in count_dict]
+    x_pos = np.arange(len(words))
+    plt.figure(2, figsize=(10, 8/1.1180))
+    plt.subplot(title='8 most common words in document')
+    sns.set_context("notebook", font_scale=1.15, rc={"lines.linewidth": 2.5})
+    sns.barplot(x_pos, counts, palette='husl')
+    plt.xticks(x_pos, words, rotation=90)
+    plt.xlabel('words')
+    plt.ylabel('counts')
+
+    bytes_image = BytesIO()
+    plt.savefig(bytes_image, format='png')
+    bytes_image.seek(0)
+    graph= base64.b64encode(bytes_image.getvalue()).decode()
+    plt.close()
+    return render_template('overall.html',piechart=result,most_common=graph)
 
 
 @app.route("/modeling")
@@ -174,9 +219,13 @@ def preprocess():
                 filename = secure_filename(file.filename)
                 folder_path = 'input_pdf/'
                 _mkdir_p(folder_path)
+
                 file.save(os.path.join(folder_path, filename))
                 lone=convert_pdf_to_txt(folder_path+ filename)
-                return_url=preclean(lone)
+
+                return_url,clean_sentences=preclean(lone)
+
+                joblib.dump((lone,clean_sentences),"raw_clean.pkl")
                 return send_file(return_url,attachment_filename='plot.png',mimetype='image/png')
 
 

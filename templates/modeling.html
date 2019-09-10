@@ -12,15 +12,13 @@
     function ShowLoading(e) {
         var div = document.createElement('div');
         var img = document.createElement('img');
-        img.src = 'static/image/load_me.gif';
+        //img.src = 'static/image/load_me.gif';
         div.innerHTML = "Processing...<br />";
         div.style.cssText = 'position: fixed; top: 40%; left: 36%; z-index: 5000; width: 422px; text-align: center;color:#6e6e6e';
         div.appendChild(img);
         document.body.appendChild(div);
         return true;
-        // These 2 lines cancel form submission, so only use if needed.
-        //window.event.cancelBubble = true;
-        //e.stopPropagation();
+
     }
 </script>
 
@@ -32,14 +30,20 @@
     <div class="container">
       <h1 class="title">Topic modeling</h1>
       <div class="site-header centered">
-            <nav style="float:right;margin-right:60px;">
+            <nav style="float:right;margin-right:0px;">
                 <a href="{{ url_for('index')}}" class="btn-primary">Home</a>
-            </nav>
+            </nav><br>
+            <div class="section-content" style="float:right;top:10px;margin-left:160px;">
+              <a href="{{ url_for('rawView')}}" class="btn-clean" onclick="ShowLoading()">View raw data</a>
+              <a href="{{ url_for('afterClean')}}" class="btn-clean" onclick="ShowLoading()">View Clean data</a>
+            </div>
         </div>
     </div>
+
   </header>
 
   <main class="container singup-section">
+
     {% with messages = get_flashed_messages() %}
       {% if messages %}
       {% for message in messages %}
@@ -47,16 +51,17 @@
       {% endfor %}
       {% endif %}
     {% endwith %}
+
     <form action="/preprocess" method="post" enctype="multipart/form-data" onsubmit="ShowLoading()">
             <p class="h3">Choose PDF file to analyse:</p> <input type="file" name="file" accept=".pdf"/>
-                <input type="submit" class="btn-clean" value="Clean & show topic number"/><br><br><br>
+                <input type="submit" class="btn-clean" value="Show topic number"/><br><br><br><br>
                 <center>
+
                   <a href="{{ url_for('top_term_weight')}}" class="btn-primary" onclick="ShowLoading()">Visualize with BarGraph</a>
                   <a href="{{ url_for('piechart')}}" class="btn-primary" onclick="ShowLoading()">Visualize with PieChart</a>
                 </center>
     </form>
 
 
-    <div class="section-content">
-    </div>
+
   </main>
