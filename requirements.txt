@@ -42,7 +42,7 @@ sklearn==0.0
 smart-open==1.8.4
 sortedcontainers==2.1.0
 TIE==0.1.0
-urllib3==1.25.3
+urllib3==1.25.8
 Werkzeug==0.15.4
 wordcloud==1.5.0
 WTForms==2.2.1
